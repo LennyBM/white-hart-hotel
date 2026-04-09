@@ -107,14 +107,95 @@ export default function RoomsPage() {
       <SEOHead page="rooms" />
       <SchemaOrg type="Hotel" />
 
-      {/* ══ HERO — shorter on mobile ══ */}
-      <section className="relative h-[42vh] md:h-[58vh] min-h-[240px] md:min-h-[360px] flex items-end overflow-hidden">
-        <img src="/images/room-holsworthy.webp" alt="Boutique room at The White Hart Hotel" className="absolute inset-0 w-full h-full object-cover" loading="eager" fetchPriority="high" width={1920} height={1080} />
-        <div className="absolute inset-0 image-overlay-heavy" />
-        <div className="relative max-w-7xl mx-auto px-6 pb-8 md:pb-14 w-full text-over-image">
-          <p className="font-label uppercase tracking-[0.3em] text-primary text-[10px] font-medium mb-2">Est. 1591</p>
-          <h1 className="font-headline italic text-white leading-tight" style={{ fontSize: 'clamp(2rem, 7vw, 5rem)' }}>Historic Retreats</h1>
-          <p className="text-white/65 text-sm md:text-base max-w-md mt-2 font-light hidden md:block">Six individually styled rooms in a 17th-century coaching inn.</p>
+      {/* ══ HERO — exterior facade background, centred editorial content ══ */}
+      <section className="relative h-[50vh] md:h-[66vh] min-h-[320px] md:min-h-[440px] flex items-center justify-center overflow-hidden">
+        {/* Background image: the white hart exterior */}
+        <picture>
+          <source srcSet="/images/hero-exterior.webp" type="image/webp" />
+          <img
+            src="/images/hero-exterior.jpg"
+            alt="The White Hart Hotel exterior on Fore Street, Holsworthy"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: 'center 55%' }}
+            loading="eager"
+            fetchPriority="high"
+            width={1920}
+            height={1080}
+          />
+        </picture>
+
+        {/* Darkening vignette for text legibility */}
+        <div
+          className="absolute inset-0"
+          aria-hidden="true"
+          style={{
+            background:
+              'radial-gradient(ellipse at center, rgba(14,10,6,0.35) 0%, rgba(14,10,6,0.78) 100%)',
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          aria-hidden="true"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(14,10,6,0.55) 0%, rgba(14,10,6,0.25) 35%, rgba(14,10,6,0.35) 65%, rgba(14,10,6,0.85) 100%)',
+          }}
+        />
+
+        {/* Top gold hairline */}
+        <div
+          className="absolute top-0 left-0 right-0 h-[3px] pointer-events-none"
+          aria-hidden="true"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent 0%, #9E7C3C 20%, #e6c487 50%, #9E7C3C 80%, transparent 100%)',
+          }}
+        />
+
+        {/* Centred editorial content with framed box */}
+        <div className="relative z-10 w-full px-6 text-over-image">
+          <div className="max-w-2xl mx-auto text-center">
+            {/* Top flourish */}
+            <div className="flex items-center justify-center gap-4 mb-6 hero-animate hero-animate-1">
+              <div className="h-px bg-[#e6c487] w-10 md:w-20" />
+              <p className="font-label uppercase tracking-[0.55em] text-[#e6c487] text-[11px] md:text-[12px] font-semibold whitespace-nowrap drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
+                Est.&nbsp;1591
+              </p>
+              <div className="h-px bg-[#e6c487] w-10 md:w-20" />
+            </div>
+
+            <h1
+              className="font-headline italic text-white leading-[1] drop-shadow-[0_2px_16px_rgba(0,0,0,0.7)] hero-animate hero-animate-2"
+              style={{ fontSize: 'clamp(2.6rem, 8vw, 5.5rem)' }}
+            >
+              Historic Retreats
+            </h1>
+
+            {/* Subtitle */}
+            <p className="mt-5 md:mt-7 text-white/90 text-sm md:text-base font-light leading-relaxed max-w-md mx-auto drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)] hero-animate hero-animate-3">
+              Six individually styled rooms in a Grade&nbsp;II listed coaching inn — at the heart of Holsworthy since 1591.
+            </p>
+
+            {/* Bottom flourish + CTAs */}
+            <div className="mt-7 md:mt-9 flex flex-col items-center gap-5 hero-animate hero-animate-4">
+              <div className="flex items-center gap-3">
+                <div className="h-px bg-[#e6c487]/60 w-10" />
+                <svg className="w-2.5 h-2.5 text-[#e6c487]" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+                  <path d="M6 0l6 6-6 6-6-6z" />
+                </svg>
+                <div className="h-px bg-[#e6c487]/60 w-10" />
+              </div>
+              <a
+                href="#book"
+                className="inline-flex items-center gap-2 bg-[#e6c487] text-[#221E1A] px-7 py-3.5 rounded-md font-label font-bold text-[11px] md:text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors shadow-xl"
+              >
+                Check Availability
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

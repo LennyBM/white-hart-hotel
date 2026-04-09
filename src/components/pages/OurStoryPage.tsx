@@ -1,6 +1,7 @@
 import { SEOHead } from '../ui/SEOHead';
 import { DeerMotif } from '../ui/DeerMotif';
 import { CTAButton } from '../ui/CTAButton';
+import { FlourishDivider } from '../ui/FlourishDivider';
 import { CONTACT } from '../../constants/contact';
 import { timeline } from '../../data/historyTimeline';
 
@@ -9,23 +10,24 @@ export function OurStoryPage() {
     <>
       <SEOHead page="ourStory" />
 
-      {/* Hero */}
-      <section className="relative bg-surface py-28 md:py-40 overflow-hidden">
-        <DeerMotif
-          className="absolute right-[-60px] top-1/2 -translate-y-1/2 text-outline-variant/5 pointer-events-none"
-          size={500}
-        />
-        <div className="relative z-10 container mx-auto px-6 lg:px-8 text-center reveal-up">
-          <p className="font-label uppercase tracking-[0.3em] text-primary text-xs font-medium mb-6">
-            Since 1591
-          </p>
-          <h1 className="font-headline italic text-5xl md:text-6xl lg:text-7xl text-on-surface leading-[1.1] mb-6">
-            Our Story
-          </h1>
-          <p className="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-            Four centuries of Devon hospitality — from a manor house beside
-            the church to a family-run coaching inn at the heart of Holsworthy.
-          </p>
+      {/* Hero — dark band with flourish + deer watermarks */}
+      <section className="band-dark-mesh relative overflow-hidden py-20 md:py-32 top-accent">
+        <DeerMotif className="absolute -top-10 -right-12 text-[#e6c487] opacity-[0.06]" size={380} />
+        <DeerMotif className="absolute -bottom-10 -left-12 text-[#e6c487] opacity-[0.04] hidden md:block" size={280} />
+        <div className="relative z-10 container mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center reveal-up">
+            <FlourishDivider label="Since 1591" variant="light" className="mb-8" />
+            <h1
+              className="font-headline italic text-white leading-[1.02] drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)]"
+              style={{ fontSize: 'clamp(2.8rem, 8vw, 5.8rem)' }}
+            >
+              Our Story
+            </h1>
+            <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto mt-7 leading-relaxed font-light">
+              Four centuries of Devon hospitality &mdash; from a manor house beside
+              the church to a family-run coaching inn at the heart of Holsworthy.
+            </p>
+          </div>
         </div>
       </section>
 

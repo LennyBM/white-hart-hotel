@@ -171,18 +171,18 @@ export default function DiningPage() {
           {/* Horizontal scroll on mobile, flex-wrap on desktop */}
           <div className="mobile-scroll md:flex md:flex-wrap md:justify-center md:gap-10 px-1">
             {[
-              { day: 'Tue', event: 'Poker Night 8pm', icon: '♠️' },
-              { day: 'Wed', event: 'Steak Night', icon: '🥩' },
-              { day: 'Thu', event: 'Pensioner Lunch', icon: '🍽️' },
-              { day: 'Fri', event: 'VINYL Opens 6pm', icon: '🎵' },
-              { day: 'Sat', event: 'VINYL + Karaoke', icon: '🎤' },
-              { day: 'Sun', event: 'Carvery 12–3:30', icon: '🍖' },
+              { day: 'Tue', event: 'Poker Night 8pm', icon: '♠️', to: '/whats-on/poker' },
+              { day: 'Wed', event: 'Steak Night', icon: '🥩', to: '/black-rock-grill' },
+              { day: 'Thu', event: 'Pensioner Lunch', icon: '🍽️', to: '/menu' },
+              { day: 'Fri', event: 'VINYL Opens 6pm', icon: '🎵', to: '/vinyl-menu' },
+              { day: 'Sat', event: 'VINYL + Karaoke', icon: '🎤', to: '/whats-on/karaoke' },
+              { day: 'Sun', event: 'Carvery 12–3:30', icon: '🍖', to: '/dining#carvery' },
             ].map((item) => (
-              <div key={item.day} className="mobile-scroll-item text-center min-w-[80px] md:min-w-0">
+              <Link key={item.day} to={item.to} className="mobile-scroll-item text-center min-w-[80px] md:min-w-0 group hover:opacity-75 transition-opacity">
                 <span className="text-xl block mb-1">{item.icon}</span>
-                <p className="font-headline italic text-base text-on-surface">{item.day}</p>
+                <p className="font-headline italic text-base text-on-surface group-hover:text-primary transition-colors">{item.day}</p>
                 <p className="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">{item.event}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

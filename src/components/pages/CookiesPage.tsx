@@ -1,14 +1,33 @@
 import { SEOHead } from '../ui/SEOHead';
 import { Link } from 'react-router-dom';
+import { FlourishDivider } from '../ui/FlourishDivider';
+import { DeerMotif } from '../ui/DeerMotif';
 
 export function CookiesPage() {
   return (
     <>
       <SEOHead page="cookies" />
-      <main className="min-h-screen bg-background pt-32 pb-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-headline italic text-4xl sm:text-5xl text-on-surface mb-4">Cookie Policy</h1>
-          <p className="text-on-surface-variant text-sm mb-12">Last updated: April 2026</p>
+      <main className="min-h-screen">
+        {/* Hero — dark band with flourish + deer watermark */}
+        <section className="band-dark-mesh relative overflow-hidden py-20 md:py-32 top-accent">
+          <DeerMotif className="absolute -top-10 -right-10 md:top-4 md:right-12 text-[#e6c487] opacity-[0.05]" size={340} />
+          <div className="relative z-10 container mx-auto px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center reveal-up">
+              <FlourishDivider label="Legal" variant="light" className="mb-8" />
+              <h1 className="font-headline italic text-white leading-[1.02] drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)]" style={{ fontSize: 'clamp(2.8rem, 8vw, 5.5rem)' }}>
+                Cookie Policy
+              </h1>
+              <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed font-light">
+                How we use cookies on The White Hart Hotel website.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Body */}
+        <section className="bg-blush paper-texture relative overflow-hidden py-20">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-on-surface-variant text-sm mb-12">Last updated: April 2026</p>
 
           <div className="space-y-10 text-on-surface-variant leading-relaxed">
             {/* What Are Cookies */}
@@ -203,7 +222,8 @@ export function CookiesPage() {
               </p>
             </section>
           </div>
-        </div>
+          </div>
+        </section>
       </main>
     </>
   );

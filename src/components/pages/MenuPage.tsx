@@ -1,6 +1,8 @@
 import { SEOHead } from '../ui/SEOHead';
 import { CTAButton } from '../ui/CTAButton';
 import { ShareButton } from '../ui/ShareButton';
+import { FlourishDivider } from '../ui/FlourishDivider';
+import { DeerMotif } from '../ui/DeerMotif';
 import { CONTACT } from '../../constants/contact';
 import { pubMenuSections } from '../../data/pubMenu';
 
@@ -37,26 +39,51 @@ export default function MenuPage() {
     <>
       <SEOHead page="menu" />
 
-      {/* ══ HERO ══ */}
-      <section className="bg-surface-container-low py-10 md:py-16 border-b border-outline-variant/20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-2xl">
-            <p className="font-label uppercase tracking-[0.35em] text-primary text-[10px] font-medium mb-3">Open All Day</p>
-            <h1 className="font-headline italic text-on-surface leading-tight mb-4" style={{ fontSize: 'clamp(2rem, 6vw, 4rem)' }}>
+      {/* ══ HERO — dark band with editorial framing ══ */}
+      <section className="band-dark-mesh relative overflow-hidden py-20 md:py-28 top-accent">
+        <DeerMotif className="absolute top-4 right-10 text-[#e6c487] opacity-[0.05] hidden md:block" size={300} />
+        <div className="relative z-10 container mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <FlourishDivider label="Open All Day" variant="light" className="mb-7" />
+            <h1
+              className="font-headline italic text-white leading-[1.02] drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)]"
+              style={{ fontSize: 'clamp(2.8rem, 8vw, 5.5rem)' }}
+            >
               Food Menu
             </h1>
-            <p className="text-on-surface-variant text-sm md:text-base leading-relaxed font-light mb-4">
-              Served every day. Lunch 11am–2:30pm · Dinner 6pm–8:30pm Mon–Sat.
-              Sunday? Join us for the <a href="/dining#carvery" className="text-primary hover:underline underline-offset-4">Carvery from 12–3:30pm</a>.
+            <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed font-light">
+              Served every day. Lunch 11am&ndash;2:30pm &middot; Dinner 6pm&ndash;8:30pm Mon&ndash;Sat.
+              Sunday? Join us for the{' '}
+              <a href="/dining#carvery" className="text-[#e6c487] hover:text-white underline underline-offset-4 decoration-1">
+                Carvery from 12&ndash;3:30pm
+              </a>
+              .
             </p>
-            <div className="flex flex-wrap gap-3 text-xs text-on-surface-variant/70 font-label mb-6">
-              <span className="bg-surface-container px-3 py-1 rounded-full border border-outline-variant/20">☎ Call to order: <a href={CONTACT.phoneHref} className="text-primary">{CONTACT.phone}</a></span>
-<span className="bg-surface-container px-3 py-1 rounded-full border border-outline-variant/20">🏅 Food Hygiene Rating: 5</span>
+
+            {/* Info chips */}
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-xs font-label">
+              <span className="inline-flex items-center gap-2 bg-white/5 border border-white/15 text-white/80 px-4 py-1.5 rounded-full backdrop-blur-sm">
+                <svg className="w-3.5 h-3.5 text-[#e6c487]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+                Call to order:
+                <a href={CONTACT.phoneHref} className="text-[#e6c487] font-medium hover:text-white transition-colors">{CONTACT.phone}</a>
+              </span>
+              <span className="inline-flex items-center gap-2 bg-white/5 border border-white/15 text-white/80 px-4 py-1.5 rounded-full backdrop-blur-sm">
+                <span className="inline-flex items-center justify-center w-4 h-4 rounded-sm bg-[#2e7d32] text-white text-[9px] font-bold">5</span>
+                Food Hygiene Rating
+              </span>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
+
+            {/* CTAs */}
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <CTAButton to="/contact" variant="primary">Book a Table</CTAButton>
-              <CTAButton to="/vinyl-menu" variant="outline">VINYL Evening Menu →</CTAButton>
-              <ShareButton title="The White Hart Food Menu" text="Check out the menu at The White Hart, Holsworthy" />
+              <CTAButton to="/vinyl-menu" variant="outline">VINYL Evening Menu</CTAButton>
+              <ShareButton
+                title="The White Hart Food Menu"
+                text="Check out the menu at The White Hart, Holsworthy"
+                className="text-white/70 hover:text-[#e6c487]"
+              />
             </div>
           </div>
         </div>

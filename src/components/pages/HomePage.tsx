@@ -434,12 +434,10 @@ export default function HomePage() {
             <p className="text-on-surface-variant text-base md:text-lg leading-relaxed font-light">
               The White Hart dates back to 1591 — the hart on our facade to the reign of Richard&nbsp;II. In 1982, Richard and Annette Hutchings purchased the hotel; in 2005, their son Jon and wife Tam took over. Jon — a former Royal Navy serviceman and the current Mayor of Holsworthy — has dedicated his life to both the hotel and the town. Four decades on, the Hutchings family remains at the heart of Holsworthy.
             </p>
-            <Link to="/our-story" className="inline-flex items-center text-primary font-label uppercase tracking-widest text-xs md:text-sm group link-slide">
-              Discover the Legacy
-              <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            <div className="flex flex-wrap gap-3 pt-1">
+              <CTAButton to="/our-story" variant="primary">Our Story</CTAButton>
+              <CTAButton to="/contact" variant="outline">Visit Us</CTAButton>
+            </div>
           </div>
         </div>
       </section>

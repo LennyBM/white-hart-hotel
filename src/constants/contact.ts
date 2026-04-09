@@ -47,7 +47,9 @@ export const FOOTER_EXPLORE_LINKS = [
   { label: 'VINYL Menu', to: '/vinyl-menu' },
   { label: 'Rooms', to: '/rooms' },
   { label: "What's On", to: '/whats-on' },
+  { label: 'Pool Tables', to: '/whats-on/pool' },
   { label: 'Pop Up Bar', to: '/pop-up-bar' },
   { label: 'Our Story', to: '/our-story' },
+  { label: 'News', to: '/news' },
   { label: 'Contact', to: '/contact' },
 ] as const;

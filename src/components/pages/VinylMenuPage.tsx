@@ -2,6 +2,8 @@ import { useState, useCallback } from 'react';
 import { SEOHead } from '../ui/SEOHead';
 import { CONTACT } from '../../constants/contact';
 import { vinylMenuSections, type VinylMenuItem } from '../../data/vinylMenu';
+import { FlourishDivider } from '../ui/FlourishDivider';
+import { DeerMotif } from '../ui/DeerMotif';
 
 /* ─────────────────────────────────────────────
    Types
@@ -284,25 +286,23 @@ export default function VinylMenuPage() {
     <>
       <SEOHead page="vinyl-menu" />
 
-      {/* ── HERO ── */}
-      <section className="bg-surface-container-lowest border-b border-outline-variant/20">
-        <div className="max-w-7xl mx-auto px-6 py-8 md:py-14 text-center">
-          <p className="font-label uppercase tracking-[0.4em] text-primary text-[10px] font-semibold mb-2">
-            Friday &amp; Saturday from 6 pm
-          </p>
-          <h1 className="font-headline italic text-on-surface leading-none tracking-tight" style={{ fontSize: 'clamp(3rem, 10vw, 7rem)' }}>
-            VINYL
-          </h1>
-          <p className="font-headline italic text-on-surface-variant mt-1 mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)' }}>
-            @ The White Hart — Evening Menu
-          </p>
-          <p className="text-on-surface-variant text-sm max-w-md mx-auto leading-relaxed hidden md:block">
-            Steak &middot; Ribs &middot; Burgers &middot; Pizza &middot; Black Rock Grill. Browse and pre-order via WhatsApp, or order at your table.
-          </p>
-          <div className="mt-4 flex flex-wrap justify-center gap-3 text-sm text-on-surface-variant">
-            <a href={CONTACT.phoneHref} className="text-primary font-medium hover:underline underline-offset-4">{CONTACT.phone}</a>
-            <span className="text-outline-variant hidden md:inline">·</span>
-            <span className="hidden md:inline">Holsworthy, Devon</span>
+      {/* Hero — dark band with flourish + deer watermark */}
+      <section className="band-dark-mesh relative overflow-hidden py-20 md:py-32 top-accent">
+        <DeerMotif className="absolute -top-10 -right-10 md:top-4 md:right-12 text-[#e6c487] opacity-[0.05]" size={340} />
+        <div className="relative z-10 container mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center reveal-up">
+            <FlourishDivider label="Friday & Saturday · From 6pm" variant="light" className="mb-8" />
+            <h1 className="font-headline italic text-white leading-[1.02] drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)]" style={{ fontSize: 'clamp(2.8rem, 8vw, 5.5rem)' }}>
+              VINYL Evening Menu
+            </h1>
+            <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed font-light">
+              Steak &middot; Ribs &middot; Burgers &middot; Pizza &middot; Black Rock Grill. Browse and pre-order via WhatsApp, or order at your table.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm text-white/70">
+              <a href={CONTACT.phoneHref} className="text-[#e6c487] font-medium hover:text-white hover:underline underline-offset-4 transition-colors">{CONTACT.phone}</a>
+              <span className="text-white/30 hidden md:inline">·</span>
+              <span className="hidden md:inline">Holsworthy, Devon</span>
+            </div>
           </div>
         </div>
       </section>
