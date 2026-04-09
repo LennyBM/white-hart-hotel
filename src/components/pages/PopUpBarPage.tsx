@@ -109,6 +109,17 @@ export function PopUpBarPage() {
             <CTAButton href={CONTACT.phoneHref} variant="outline">
               Call {CONTACT.phone}
             </CTAButton>
+            <a
+              href={CONTACT.popUpBarFacebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-white/30 text-white/80 hover:text-white hover:border-white/60 transition-colors font-label font-semibold text-sm uppercase tracking-wider"
+            >
+              <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              Follow on Facebook
+            </a>
           </div>
         </div>
       </section>
@@ -300,12 +311,19 @@ export function PopUpBarPage() {
                 {CONTACT.popUpBarEmail}
               </a>
             </p>
-            <p className="text-on-surface-variant text-sm mt-2">
-              Follow us:{' '}
-              <a href="https://www.facebook.com/popupbarcompany/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-4">
-                Facebook
+            <div className="mt-4">
+              <a
+                href={CONTACT.popUpBarFacebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium text-sm underline underline-offset-4"
+              >
+                <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Pop Up Bar Company on Facebook
               </a>
-            </p>
+            </div>
           </div>
 
           {formState === 'success' ? (

@@ -23,6 +23,7 @@ export const CONTACT = {
   bookingCom: 'https://www.booking.com/hotel/gb/the-white-hart-holsworthy.en-gb.html',
   bookingWidget: 'https://booking-directly.com/widgets/gCrAJ1iHwTnL2YNP44S1JwYanECIEtytE9QYavyb7ttg1IOsQgU34OUB54Bh8/properties/unit-selection',
   vinylFacebook: 'https://www.facebook.com/vinylholsworthy/',
+  popUpBarFacebook: 'https://www.facebook.com/popupbarcompany/',
   justEat: 'https://www.just-eat.co.uk/restaurants-white-hart-hotel-holsworthy/menu?utm_source=whiteharthotel&utm_medium=website&utm_campaign=takeaway',
   camra: 'https://camra.org.uk/pubs/white-hart-hotel-holsworthy-188237',
   historicEngland: 'https://historicengland.org.uk/listing/the-list/list-entry/1104942',
