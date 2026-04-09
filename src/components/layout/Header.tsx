@@ -24,7 +24,17 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link to="/" className="text-2xl font-headline italic text-primary tracking-tight" aria-label="The White Hart Hotel — home">
+            <Link
+              to="/"
+              className="text-2xl font-headline italic text-primary tracking-tight"
+              aria-label="The White Hart Hotel — home"
+              onClick={(e) => {
+                if (pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+            >
               The White Hart
             </Link>
 
