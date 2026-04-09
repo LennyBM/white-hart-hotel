@@ -434,6 +434,32 @@ export default function DiningPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Book a Room ── */}
+      <section id="book" className="bg-surface py-12 md:py-20">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-8">
+            <p className="font-label uppercase tracking-[0.3em] text-primary text-xs font-medium mb-3">Staying Over?</p>
+            <h2 className="font-headline italic text-on-surface" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>Book a Room</h2>
+            <p className="text-on-surface-variant text-sm mt-3 font-light">Six boutique rooms above the bar. Check availability and book directly below.</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-sm bg-surface-container-low">
+            <iframe
+              src={CONTACT.bookingWidget}
+              title="Book a room at The White Hart Hotel"
+              className="w-full"
+              style={{ height: '520px', border: 'none', display: 'block' }}
+              loading="lazy"
+            />
+          </div>
+          <p className="text-center text-xs text-on-surface-variant/60 mt-4">
+            Prefer to call?{' '}
+            <a href={CONTACT.phoneHref} className="text-primary hover:underline underline-offset-4">
+              {CONTACT.phone}
+            </a>
+          </p>
+        </div>
+      </section>
     </>
   );
 }

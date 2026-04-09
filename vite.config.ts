@@ -12,19 +12,23 @@ export default defineConfig({
     reportCompressedSize: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          // React core — cached independently across all route chunks
-          'vendor-react': ['react', 'react-dom'],
-          // Router — changes less often than app code
-          'vendor-router': ['react-router-dom'],
-          // Helmet — rarely updated
-          'vendor-helmet': ['react-helmet-async'],
+        manualChunks(id) {
+          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/')) {
+            return 'vendor-react';
+          }
+          if (id.includes('node_modules/react-router')) {
+            return 'vendor-router';
+          }
+          if (id.includes('node_modules/react-helmet-async')) {
+            return 'vendor-helmet';
+          }
         },
       },
     },
   },
-  esbuild: {
-    // Strip legal comments from output (saves a few KB)
-    legalComments: 'none',
+  optimizeDeps: {
+    esbuildOptions: {
+      legalComments: 'none',
+    },
   },
 })
