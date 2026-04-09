@@ -7,7 +7,6 @@ import { CTAButton } from '../ui/CTAButton';
 import { TestimonialStrip } from '../ui/TestimonialStrip';
 import { ReviewBadge } from '../ui/ReviewBadge';
 import { AccreditationBar } from '../ui/AccreditationBar';
-import { DeerMotif } from '../ui/DeerMotif';
 import { openingHours, kitchenNote } from '../../data/openingHours';
 import { CONTACT } from '../../constants/contact';
 
@@ -418,7 +417,6 @@ export default function HomePage() {
 
       {/* ══ 10 · OUR STORY (brand depth for committed scrollers) ══ */}
       <section className="py-10 md:py-28 px-6 md:px-8 bg-surface-container-lowest relative overflow-hidden" aria-label="Our Story">
-        <DeerMotif className="absolute top-10 right-10 text-on-surface hidden md:block" size={260} />
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-20 items-center">
           <div className="relative reveal-left">
             <div className="aspect-[3/2] md:aspect-[4/5] overflow-hidden rounded-xl md:rounded-2xl shadow-xl relative z-10 img-zoom">

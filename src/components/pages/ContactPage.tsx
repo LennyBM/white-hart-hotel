@@ -5,7 +5,6 @@ import { SchemaOrg } from '../ui/SchemaOrg';
 import { GoogleMap } from '../ui/GoogleMap';
 import { CTAButton } from '../ui/CTAButton';
 import { FlourishDivider } from '../ui/FlourishDivider';
-import { DeerMotif } from '../ui/DeerMotif';
 import { CONTACT } from '../../constants/contact';
 import { openingHours, kitchenNote } from '../../data/openingHours';
 import { faqs } from '../../data/faq';
@@ -300,8 +299,6 @@ export function ContactPage() {
       {/* Hero — dark band with gold flourish + deer watermark */}
       <section className="band-dark-mesh relative overflow-hidden py-20 md:py-32 top-accent">
         {/* Deer watermark */}
-        <DeerMotif className="absolute -top-10 -right-10 md:top-4 md:right-12 text-[#e6c487] opacity-[0.05]" size={340} />
-        <DeerMotif className="absolute -bottom-12 -left-12 text-[#e6c487] opacity-[0.04] hidden md:block" size={260} />
 
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center reveal-up">
@@ -344,7 +341,6 @@ export function ContactPage() {
       {/* Contact Details + Form — on blush background with paper texture */}
       <section className="bg-blush paper-texture relative overflow-hidden py-24 md:py-32">
         {/* Subtle deer watermark corner */}
-        <DeerMotif className="absolute top-1/2 -right-16 -translate-y-1/2 text-[#9E7C3C] opacity-[0.04] hidden lg:block" size={400} />
         <div className="container mx-auto px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-[380px_1fr] xl:grid-cols-[420px_1fr] gap-16 lg:gap-24">
             {/* ========== LEFT: Contact info ========== */}

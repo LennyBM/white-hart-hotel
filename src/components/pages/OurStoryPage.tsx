@@ -1,5 +1,4 @@
 import { SEOHead } from '../ui/SEOHead';
-import { DeerMotif } from '../ui/DeerMotif';
 import { CTAButton } from '../ui/CTAButton';
 import { FlourishDivider } from '../ui/FlourishDivider';
 import { CONTACT } from '../../constants/contact';
@@ -12,8 +11,6 @@ export function OurStoryPage() {
 
       {/* Hero — dark band with flourish + deer watermarks */}
       <section className="band-dark-mesh relative overflow-hidden py-20 md:py-32 top-accent">
-        <DeerMotif className="absolute -top-10 -right-12 text-[#e6c487] opacity-[0.06]" size={380} />
-        <DeerMotif className="absolute -bottom-10 -left-12 text-[#e6c487] opacity-[0.04] hidden md:block" size={280} />
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center reveal-up">
             <FlourishDivider label="Since 1591" variant="light" className="mb-8" />
@@ -118,10 +115,6 @@ export function OurStoryPage() {
 
       {/* Closing statement */}
       <section className="relative bg-surface py-24 md:py-32 overflow-hidden mesh-warm">
-        <DeerMotif
-          className="absolute left-[-80px] bottom-[-40px] text-outline-variant/5 pointer-events-none"
-          size={400}
-        />
         <div className="relative z-10 container mx-auto px-6 lg:px-8 text-center max-w-3xl reveal-up">
           <p className="font-label uppercase tracking-[0.3em] text-primary text-xs font-medium mb-6">
             Looking Forward

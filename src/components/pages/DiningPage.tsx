@@ -3,7 +3,6 @@ import { SEOHead } from '../ui/SEOHead';
 import { SchemaOrg } from '../ui/SchemaOrg';
 import { SectionHeading } from '../ui/SectionHeading';
 import { CTAButton } from '../ui/CTAButton';
-import { DeerMotif } from '../ui/DeerMotif';
 import { CONTACT } from '../../constants/contact';
 import { barHighlights, vinylTracklist, barFavourites } from '../../data/menuHighlights';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
@@ -24,10 +23,6 @@ export default function DiningPage() {
           ZONE 1 — THE BAR
           ════════════════════════════════════ */}
       <section className="relative bg-surface-container-low overflow-hidden">
-        {/* Heritage deer motif — top-right, faint */}
-        <div className="absolute top-12 right-12 opacity-5 pointer-events-none select-none">
-          <DeerMotif size={360} className="text-primary" />
-        </div>
 
         <div className="max-w-7xl mx-auto px-6 py-10 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">

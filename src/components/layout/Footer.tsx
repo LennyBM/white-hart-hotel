@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { CONTACT, FOOTER_EXPLORE_LINKS } from '../../constants/contact';
 import { openingHours, kitchenNote } from '../../data/openingHours';
-import { DeerMotif } from '../ui/DeerMotif';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -146,7 +145,6 @@ export function Footer() {
       </div>
 
       {/* Heritage stamp */}
-      <DeerMotif className="absolute bottom-8 right-8 text-[#E5E2E1]" size={120} />
     </footer>
   );
 }

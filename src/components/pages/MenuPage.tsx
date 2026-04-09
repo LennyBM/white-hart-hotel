@@ -2,7 +2,6 @@ import { SEOHead } from '../ui/SEOHead';
 import { CTAButton } from '../ui/CTAButton';
 import { ShareButton } from '../ui/ShareButton';
 import { FlourishDivider } from '../ui/FlourishDivider';
-import { DeerMotif } from '../ui/DeerMotif';
 import { CONTACT } from '../../constants/contact';
 import { pubMenuSections } from '../../data/pubMenu';
 
@@ -41,7 +40,6 @@ export default function MenuPage() {
 
       {/* ══ HERO — dark band with editorial framing ══ */}
       <section className="band-dark-mesh relative overflow-hidden py-20 md:py-28 top-accent">
-        <DeerMotif className="absolute top-4 right-10 text-[#e6c487] opacity-[0.05] hidden md:block" size={300} />
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <FlourishDivider label="Open All Day" variant="light" className="mb-7" />

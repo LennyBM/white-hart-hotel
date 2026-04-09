@@ -48,6 +48,8 @@ export function Layout() {
         Skip to main content
       </a>
       <Header />
+      {/* Spacer pushes TodayStrip below the fixed header (h-16 mobile, h-20 desktop) */}
+      <div className="h-16 md:h-20" aria-hidden="true" />
       <TodayStrip />
       <main id="main-content">
         <Outlet />

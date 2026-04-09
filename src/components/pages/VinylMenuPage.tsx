@@ -3,7 +3,6 @@ import { SEOHead } from '../ui/SEOHead';
 import { CONTACT } from '../../constants/contact';
 import { vinylMenuSections, type VinylMenuItem } from '../../data/vinylMenu';
 import { FlourishDivider } from '../ui/FlourishDivider';
-import { DeerMotif } from '../ui/DeerMotif';
 
 /* ─────────────────────────────────────────────
    Types
@@ -288,7 +287,6 @@ export default function VinylMenuPage() {
 
       {/* Hero — dark band with flourish + deer watermark */}
       <section className="band-dark-mesh relative overflow-hidden py-20 md:py-32 top-accent">
-        <DeerMotif className="absolute -top-10 -right-10 md:top-4 md:right-12 text-[#e6c487] opacity-[0.05]" size={340} />
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center reveal-up">
             <FlourishDivider label="Friday & Saturday · From 6pm" variant="light" className="mb-8" />

@@ -1,6 +1,5 @@
 import { SEOHead } from '../ui/SEOHead';
 import { FlourishDivider } from '../ui/FlourishDivider';
-import { DeerMotif } from '../ui/DeerMotif';
 
 const posts = [
   {
@@ -30,7 +29,6 @@ export function BlogPage() {
 
       {/* Hero — dark band with flourish */}
       <section className="band-dark-mesh relative overflow-hidden py-20 md:py-28 top-accent">
-        <DeerMotif className="absolute top-4 right-10 text-[#e6c487] opacity-[0.05] hidden md:block" size={280} />
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <FlourishDivider label="What's New" variant="light" className="mb-6" />
@@ -49,7 +47,6 @@ export function BlogPage() {
 
       {/* Posts — blush background with paper texture */}
       <section className="bg-blush paper-texture relative overflow-hidden py-16 md:py-24">
-        <DeerMotif className="absolute top-1/3 -left-16 text-[#9E7C3C] opacity-[0.035] hidden lg:block" size={380} />
         <div className="container mx-auto px-6 lg:px-8 relative">
           <div className="max-w-3xl mx-auto space-y-6">
             {posts.map((post, i) => (
