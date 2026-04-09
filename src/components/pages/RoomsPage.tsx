@@ -341,7 +341,7 @@ export default function RoomsPage() {
         </div>
       </section>
 
-      {/* ══ BOOKING WIDGET ══ */}
+      {/* ══ BOOKING ══ */}
       <section id="book" className="bg-surface-container-lowest py-14 md:py-24">
         <div className="max-w-5xl mx-auto px-4 md:px-6">
           <div className="text-center mb-8 md:mb-12 reveal">
@@ -353,22 +353,70 @@ export default function RoomsPage() {
               Book directly for the best available rate — no middlemen, no booking fees.
             </p>
           </div>
-          <div className="rounded-2xl overflow-hidden border border-outline-variant/15 shadow-lg bg-white reveal reveal-d1">
-            <iframe
-              src={CONTACT.bookingWidget}
-              title="Book a room at The White Hart Hotel"
-              className="w-full border-0"
-              style={{ minHeight: '700px' }}
-              loading="lazy"
-              allow="payment"
-            />
-          </div>
-          <p className="text-center text-on-surface-variant text-xs mt-6">
-            Prefer to speak to someone? Call{' '}
-            <a href={CONTACT.phoneHref} className="text-primary font-semibold hover:underline underline-offset-4">
-              {CONTACT.phone}
+
+          {/* Direct booking options — always visible, guaranteed to work */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 reveal reveal-d1">
+            <a
+              href={CONTACT.phoneHref}
+              className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-primary text-on-primary hover:bg-primary/90 transition-colors shadow-lg"
+            >
+              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              <div className="text-center">
+                <p className="font-label uppercase tracking-widest text-xs font-bold mb-1">Call to Book</p>
+                <p className="font-headline italic text-lg leading-tight">{CONTACT.phone}</p>
+                <p className="text-on-primary/70 text-xs mt-1">Best rate guaranteed</p>
+              </div>
             </a>
-          </p>
+
+            <a
+              href={CONTACT.emailHref}
+              className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-surface border border-outline-variant/20 hover:border-primary/30 hover:bg-primary/5 transition-all shadow-sm"
+            >
+              <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              <div className="text-center">
+                <p className="font-label uppercase tracking-widest text-xs font-bold text-on-surface mb-1">Email Us</p>
+                <p className="font-headline italic text-base text-primary leading-tight">{CONTACT.email}</p>
+                <p className="text-on-surface-variant text-xs mt-1">We reply same day</p>
+              </div>
+            </a>
+
+            <a
+              href={CONTACT.bookingCom}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-surface border border-outline-variant/20 hover:border-[#003580]/30 hover:bg-[#003580]/5 transition-all shadow-sm"
+            >
+              <svg className="w-7 h-7 text-[#003580]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.4 8.3c-.4-.5-1-.8-1.8-.8H12V5h-2v12h2v-4h3.6c.8 0 1.4-.3 1.8-.8.4-.5.6-1.1.6-1.9v-1c0-.8-.2-1.5-.6-2zM16 13.2c0 .4-.1.7-.3.9-.2.2-.5.3-.9.3H12V9.5h2.8c.4 0 .7.1.9.3.2.2.3.5.3.9v2.5z" />
+              </svg>
+              <div className="text-center">
+                <p className="font-label uppercase tracking-widest text-xs font-bold text-on-surface mb-1">Booking.com</p>
+                <p className="text-on-surface-variant text-xs leading-tight">Check availability &amp; book online</p>
+                <p className="text-[#003580] text-xs mt-1 font-medium">Book via Booking.com →</p>
+              </div>
+            </a>
+          </div>
+
+          {/* Inline widget — shown as bonus if it works */}
+          <details className="reveal reveal-d2">
+            <summary className="cursor-pointer text-center font-label uppercase tracking-widest text-xs text-on-surface-variant hover:text-primary transition-colors py-3 select-none">
+              Try online booking widget ↓
+            </summary>
+            <div className="mt-4 rounded-2xl overflow-hidden border border-outline-variant/15 shadow-lg bg-white">
+              <iframe
+                src={CONTACT.bookingWidget}
+                title="Book a room at The White Hart Hotel"
+                className="w-full border-0"
+                style={{ minHeight: '700px' }}
+                loading="lazy"
+                allow="payment"
+              />
+            </div>
+          </details>
         </div>
       </section>
     </>
