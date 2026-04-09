@@ -122,13 +122,13 @@ export default function HomePage() {
         </div>
 
         {/* Centred editorial content */}
-        <div className="relative z-10 text-center px-6 w-full">
+        <div className="relative z-10 text-center px-6 w-full text-over-image">
           <div className="flex items-center justify-center gap-3 md:gap-5 mb-5 md:mb-7 hero-animate hero-animate-1">
-            <div className="h-px bg-[#c9a96e]/55 w-10 md:w-24" />
-            <p className="font-label uppercase tracking-[0.55em] text-[#c9a96e] text-[9px] md:text-[10px] whitespace-nowrap">
+            <div className="h-px bg-[#e6c487] w-10 md:w-24" />
+            <p className="font-label uppercase tracking-[0.5em] text-[#f4d9a5] text-[11px] md:text-[13px] font-semibold whitespace-nowrap">
               Est.&nbsp;1591&nbsp;·&nbsp;Holsworthy,&nbsp;Devon
             </p>
-            <div className="h-px bg-[#c9a96e]/55 w-10 md:w-24" />
+            <div className="h-px bg-[#e6c487] w-10 md:w-24" />
           </div>
 
           <h1
@@ -139,22 +139,23 @@ export default function HomePage() {
           </h1>
 
           <div className="flex flex-col items-center gap-3 md:gap-4 mt-5 md:mt-7 hero-animate hero-animate-3">
-            <div className="h-px bg-[#c9a96e]/40 w-10 md:w-16" />
-            <p className="font-label uppercase tracking-[0.45em] text-white/45 text-[9px] md:text-[10px]">
+            <div className="h-px bg-[#e6c487]/60 w-10 md:w-16" />
+            <p className="font-label uppercase tracking-[0.4em] text-white/85 text-[11px] md:text-[13px] font-medium">
               Hotel&nbsp;·&nbsp;Bar&nbsp;·&nbsp;Restaurant&nbsp;·&nbsp;VINYL
             </p>
           </div>
         </div>
 
         {/* Dynamic status line — answers "is this the right place right now?" */}
-        <div className="absolute bottom-14 left-0 right-0 z-10 flex justify-center px-6">
-          <p className="font-label text-[9px] uppercase tracking-[0.3em] text-white/40 text-center">{heroStatus}</p>
+        <div className="absolute bottom-24 md:bottom-28 left-0 right-0 z-10 flex justify-center px-6 text-over-image">
+          <p className="font-label text-[11px] md:text-[12px] uppercase tracking-[0.3em] text-white/80 font-medium text-center">{heroStatus}</p>
         </div>
 
-        {/* Scroll cue */}
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 scroll-indicator opacity-25 z-10">
-          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+        {/* Scroll cue — more obvious */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 scroll-indicator text-center">
+          <p className="font-label text-[9px] uppercase tracking-[0.3em] text-white/70 mb-1.5 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">Scroll</p>
+          <svg className="w-6 h-6 text-white mx-auto drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </div>
       </section>
@@ -323,15 +324,23 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-3 reveal-left order-2 lg:order-1">
               {[
                 { src: '/images/room-hart.webp', name: 'The Hart Room' },
-                { src: '/images/room-merchants.webp', name: 'Merchants Room' },
+                { src: '/images/room-merchants.webp', name: "Merchant's Room" },
                 { src: '/images/room-attic.webp', name: 'The Attic' },
                 { src: '/images/room-snug.webp', name: 'The Snug' },
               ].map(({ src, name }) => (
-                <div key={name} className="relative aspect-square rounded-xl overflow-hidden group">
+                <Link
+                  key={name}
+                  to="/rooms#book"
+                  className="relative aspect-square rounded-xl overflow-hidden group block"
+                  aria-label={`View ${name} and book`}
+                >
                   <img src={src} alt={`${name} at The White Hart Hotel`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width={400} height={400} />
                   <div className="absolute inset-0 image-overlay" />
                   <p className="absolute bottom-2 left-3 font-headline italic text-white text-xs">{name}</p>
-                </div>
+                  <span className="absolute top-2 right-2 w-7 h-7 rounded-full bg-primary/90 text-on-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  </span>
+                </Link>
               ))}
             </div>
             <div className="space-y-5 reveal-right order-1 lg:order-2">
@@ -366,19 +375,42 @@ export default function HomePage() {
       </section>
 
       {/* ══ 9 · 1591 BREAK (heritage story for engaged scrollers) ══ */}
-      <div className="dark-section relative overflow-hidden py-12 md:py-24">
-        <p className="font-headline italic text-center select-none pointer-events-none leading-none absolute inset-0 flex items-center justify-center"
-          style={{ fontSize: 'clamp(6rem, 28vw, 26rem)', color: 'rgba(201,169,110,0.14)', letterSpacing: '-0.04em' }}
-          aria-hidden="true">
+      <div className="dark-section relative overflow-hidden py-16 md:py-28">
+        {/* Gradient wash to frame the watermark */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(201,169,110,0.08) 0%, rgba(201,169,110,0) 60%)' }}
+        />
+        {/* Giant 1591 watermark — stronger gold, gradient text */}
+        <p
+          className="font-headline italic text-center select-none pointer-events-none leading-none absolute inset-0 flex items-center justify-center"
+          style={{
+            fontSize: 'clamp(7rem, 32vw, 28rem)',
+            letterSpacing: '-0.04em',
+            background: 'linear-gradient(180deg, rgba(230,196,135,0.38) 0%, rgba(201,169,110,0.22) 50%, rgba(158,124,60,0.1) 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            color: 'transparent',
+            textShadow: '0 0 80px rgba(201,169,110,0.08)',
+          }}
+          aria-hidden="true"
+        >
           1591
         </p>
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-4 md:py-8">
-          <p className="font-label uppercase tracking-[0.55em] text-[#c9a96e]/50 text-[10px] mb-4">Continuously serving since</p>
-          <p className="font-headline italic leading-tight" style={{ fontSize: 'clamp(1.6rem, 4.5vw, 4rem)', color: '#F5F1EA' }}>
+          <p className="font-label uppercase tracking-[0.55em] text-[#e6c487]/90 text-[11px] mb-5 drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]">
+            Continuously serving since
+          </p>
+          <p
+            className="font-headline italic leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+            style={{ fontSize: 'clamp(1.7rem, 5vw, 4.2rem)' }}
+          >
             Four centuries of welcome.
           </p>
-          <div className="w-8 h-px bg-[#c9a96e]/25 mt-6 mb-6" />
-          <CTAButton to="/our-story" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:border-white/60 text-xs px-6 py-3">
+          <div className="w-16 h-px bg-[#e6c487]/50 mt-7 mb-7" />
+          <CTAButton to="/our-story" variant="outline" className="border-[#e6c487]/60 text-white bg-black/25 backdrop-blur-sm hover:bg-[#e6c487]/20 hover:border-[#e6c487] text-xs px-6 py-3">
             Our Story
           </CTAButton>
         </div>

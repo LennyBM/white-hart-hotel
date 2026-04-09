@@ -7,33 +7,35 @@ export default function PokerPage() {
     <>
       <SEOHead page="poker" />
 
-      {/* ══ HERO ══ */}
-      <section className="relative min-h-[56vh] md:min-h-[66vh] flex items-end overflow-hidden bg-[#0e0b08]">
-        <div className="absolute inset-0 z-0">
-          <picture>
-            <source srcSet="/images/event-poker.webp" type="image/webp" />
-            <img
-              src="/images/event-poker.jpg"
-              alt="LPPL League Poker at The White Hart Holsworthy"
-              className="w-full h-full object-cover"
-              loading="eager"
-              fetchPriority="high"
-              width={1920}
-              height={1080}
-            />
-          </picture>
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(4,3,2,0.95) 0%, rgba(4,3,2,0.6) 40%, rgba(4,3,2,0.35) 100%)' }} />
+      {/* ══ HERO — no poster crop, rich dark mesh instead ══ */}
+      <section className="relative min-h-[54vh] md:min-h-[62vh] flex items-end overflow-hidden bg-[#0e0b08]">
+        {/* Layered dark green felt-table ambient background */}
+        <div
+          className="absolute inset-0 z-0"
+          aria-hidden="true"
+          style={{
+            background:
+              'radial-gradient(ellipse at 20% 80%, rgba(30, 60, 40, 0.35) 0%, transparent 55%),' +
+              'radial-gradient(ellipse at 80% 20%, rgba(158, 124, 60, 0.18) 0%, transparent 55%),' +
+              'radial-gradient(ellipse at 50% 50%, rgba(40, 25, 10, 0.4) 0%, transparent 70%),' +
+              'linear-gradient(180deg, #0e0b08 0%, #15100a 60%, #0a0805 100%)',
+          }}
+        />
+        {/* Subtle card-suit decoration */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <span className="absolute top-[12%] left-[8%] text-[#e6c487]/[0.06] text-[280px] leading-none font-serif select-none">♠</span>
+          <span className="absolute bottom-[18%] right-[6%] text-[#e6c487]/[0.04] text-[220px] leading-none font-serif select-none">♣</span>
         </div>
         <div className="relative z-10 container mx-auto px-6 pb-14 md:pb-20">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6">
-              <span className="text-primary text-base">♠</span>
-              <span className="font-label text-[10px] uppercase tracking-widest text-white font-semibold">Every Tuesday · 8pm</span>
+            <div className="inline-flex items-center gap-3 bg-[#e6c487]/10 backdrop-blur-sm border border-[#e6c487]/30 px-4 py-2 rounded-full mb-6">
+              <span className="text-[#e6c487] text-base">♠</span>
+              <span className="font-label text-[11px] uppercase tracking-widest text-[#e6c487] font-semibold">Every Tuesday · 8pm</span>
             </div>
-            <h1 className="font-headline italic text-white leading-[0.95] mb-5" style={{ fontSize: 'clamp(2.4rem, 8vw, 5.5rem)' }}>
+            <h1 className="font-headline italic text-white leading-[0.95] mb-5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" style={{ fontSize: 'clamp(2.4rem, 8vw, 5.5rem)' }}>
               LPPL League Poker
             </h1>
-            <p className="text-white/75 text-base md:text-lg leading-relaxed font-light max-w-xl">
+            <p className="text-white/85 text-base md:text-lg leading-relaxed font-light max-w-xl">
               Holsworthy's home of Texas Hold'em. Join the League Poker Players League every Tuesday — £10 buy-in, proper tournament format, and a seat at the table for anyone who fancies their luck.
             </p>
           </div>

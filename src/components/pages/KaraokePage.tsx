@@ -7,33 +7,32 @@ export default function KaraokePage() {
     <>
       <SEOHead page="karaoke" />
 
-      {/* ══ HERO ══ */}
-      <section className="relative min-h-[56vh] md:min-h-[66vh] flex items-end overflow-hidden bg-[#0e0b08]">
-        <div className="absolute inset-0 z-0">
-          <picture>
-            <source srcSet="/images/event-karaoke.webp" type="image/webp" />
-            <img
-              src="/images/event-karaoke.jpg"
-              alt="Karaoke Night at The White Hart Holsworthy"
-              className="w-full h-full object-cover"
-              loading="eager"
-              fetchPriority="high"
-              width={1920}
-              height={1080}
-            />
-          </picture>
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(4,3,2,0.95) 0%, rgba(4,3,2,0.55) 45%, rgba(4,3,2,0.25) 100%)' }} />
+      {/* ══ HERO — rich magenta/amber stage-lights ambient ══ */}
+      <section className="relative min-h-[54vh] md:min-h-[62vh] flex items-end overflow-hidden bg-[#0e0b08]">
+        <div
+          className="absolute inset-0 z-0"
+          aria-hidden="true"
+          style={{
+            background:
+              'radial-gradient(ellipse at 25% 85%, rgba(227, 81, 160, 0.22) 0%, transparent 55%),' +
+              'radial-gradient(ellipse at 75% 15%, rgba(230, 196, 135, 0.22) 0%, transparent 55%),' +
+              'radial-gradient(ellipse at 50% 50%, rgba(40, 15, 40, 0.4) 0%, transparent 70%),' +
+              'linear-gradient(180deg, #0e0b08 0%, #17101a 60%, #0a0508 100%)',
+          }}
+        />
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <span className="absolute top-[10%] right-[10%] text-[#e6c487]/[0.06] text-[260px] leading-none select-none">🎤</span>
         </div>
         <div className="relative z-10 container mx-auto px-6 pb-14 md:pb-20">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6">
-              <span className="text-primary text-base">🎤</span>
-              <span className="font-label text-[10px] uppercase tracking-widest text-white font-semibold">First Saturday of Every Month · 9pm</span>
+            <div className="inline-flex items-center gap-3 bg-[#e6c487]/10 backdrop-blur-sm border border-[#e6c487]/30 px-4 py-2 rounded-full mb-6">
+              <span className="text-[#e6c487] text-base">🎤</span>
+              <span className="font-label text-[11px] uppercase tracking-widest text-[#e6c487] font-semibold">First Saturday · 9pm</span>
             </div>
-            <h1 className="font-headline italic text-white leading-[0.95] mb-5" style={{ fontSize: 'clamp(2.4rem, 8vw, 5.5rem)' }}>
+            <h1 className="font-headline italic text-white leading-[0.95] mb-5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" style={{ fontSize: 'clamp(2.4rem, 8vw, 5.5rem)' }}>
               Karaoke Party
             </h1>
-            <p className="text-white/75 text-base md:text-lg leading-relaxed font-light max-w-xl">
+            <p className="text-white/85 text-base md:text-lg leading-relaxed font-light max-w-xl">
               The biggest night of the month. The first Saturday of every month the bar becomes a stage — grab a mic, pick a song, and the whole room sings along. Free shot for every singer.
             </p>
           </div>

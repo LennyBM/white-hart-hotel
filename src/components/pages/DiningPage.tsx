@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { SEOHead } from '../ui/SEOHead';
 import { SchemaOrg } from '../ui/SchemaOrg';
 import { SectionHeading } from '../ui/SectionHeading';
@@ -112,39 +113,49 @@ export default function DiningPage() {
             {/* ── Right column: Images ── */}
             <div className="lg:col-span-7 reveal-right">
               {/* Mobile: single wide image */}
-              <div className="lg:hidden group relative rounded-xl overflow-hidden aspect-[16/9]">
-                <img src="/images/dining-carvery.webp" alt={barHighlights[0].description} className="w-full h-full object-cover" loading="lazy" width={800} height={450} />
+              <Link to="/dining#carvery" className="lg:hidden group relative rounded-xl overflow-hidden aspect-[16/9] block">
+                <img src="/images/dining-carvery.webp" alt={barHighlights[0].description} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width={800} height={450} />
                 <div className="absolute inset-0 image-overlay" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-over-image">
                   <p className="font-label uppercase tracking-widest text-[10px] text-primary-fixed-dim mb-0.5">Every Sunday</p>
                   <h3 className="font-headline italic text-lg text-white">{barHighlights[0].title}</h3>
                 </div>
-              </div>
+              </Link>
               {/* Desktop: 3-image grid */}
               <div className="hidden lg:grid grid-cols-2 gap-4">
-                <div className="row-span-2 group relative rounded-2xl overflow-hidden glass-card glass-card-hover">
+                <Link to="/dining#carvery" className="row-span-2 group relative rounded-2xl overflow-hidden glass-card glass-card-hover block">
                   <img src="/images/dining-carvery.webp" alt={barHighlights[0].description} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width={600} height={800} />
                   <div className="absolute inset-0 image-overlay" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 text-over-image">
                     <p className="font-label uppercase tracking-widest text-xs text-primary-fixed-dim mb-1">Every Sunday</p>
                     <h3 className="font-headline italic text-xl text-white">{barHighlights[0].title}</h3>
                     <p className="text-white/70 text-sm mt-1 line-clamp-2">{barHighlights[0].description}</p>
+                    <span className="mt-2 inline-flex items-center gap-1.5 font-label text-[10px] uppercase tracking-widest text-primary-fixed-dim opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all">
+                      View Details
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
                   </div>
-                </div>
-                <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] glass-card glass-card-hover">
+                </Link>
+                <Link to="/black-rock-grill" className="group relative rounded-2xl overflow-hidden aspect-[4/3] glass-card glass-card-hover block">
                   <img src="/images/dining-blackrock.webp" alt={barHighlights[1].description} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width={800} height={600} />
                   <div className="absolute inset-0 image-overlay" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 text-over-image">
                     <h3 className="font-headline italic text-lg text-white">{barHighlights[1].title}</h3>
+                    <span className="mt-1 inline-flex items-center gap-1 font-label text-[9px] uppercase tracking-widest text-primary-fixed-dim opacity-0 group-hover:opacity-100 transition-opacity">
+                      Learn More <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
                   </div>
-                </div>
-                <div className="group relative rounded-2xl overflow-hidden aspect-[4/3]">
+                </Link>
+                <Link to="/menu" className="group relative rounded-2xl overflow-hidden aspect-[4/3] glass-card glass-card-hover block">
                   <img src="/images/dining-pizza.webp" alt={barHighlights[2].description} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width={800} height={600} />
                   <div className="absolute inset-0 image-overlay" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 text-over-image">
                     <h3 className="font-headline italic text-lg text-white">{barHighlights[2].title}</h3>
+                    <span className="mt-1 inline-flex items-center gap-1 font-label text-[9px] uppercase tracking-widest text-primary-fixed-dim opacity-0 group-hover:opacity-100 transition-opacity">
+                      View Menu <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

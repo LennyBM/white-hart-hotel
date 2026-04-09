@@ -4,6 +4,8 @@ import { SEOHead } from '../ui/SEOHead';
 import { SchemaOrg } from '../ui/SchemaOrg';
 import { GoogleMap } from '../ui/GoogleMap';
 import { CTAButton } from '../ui/CTAButton';
+import { FlourishDivider } from '../ui/FlourishDivider';
+import { DeerMotif } from '../ui/DeerMotif';
 import { CONTACT } from '../../constants/contact';
 import { openingHours, kitchenNote } from '../../data/openingHours';
 import { faqs } from '../../data/faq';
@@ -295,25 +297,55 @@ export function ContactPage() {
         }
       `}</style>
 
-      {/* Hero */}
-      <section className="bg-surface py-24 md:py-32">
-        <div className="container mx-auto px-6 lg:px-8 text-center reveal-up">
-          <p className="font-label uppercase tracking-[0.3em] text-primary text-xs font-medium mb-6">
-            We&rsquo;d Love to Hear From You
-          </p>
-          <h1 className="font-headline italic text-5xl md:text-6xl lg:text-7xl text-on-surface leading-[1.1] mb-6">
-            Get in Touch
-          </h1>
-          <p className="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-            Whether you are booking a table, planning an event, or simply want
-            to say hello &mdash; we are always here.
-          </p>
+      {/* Hero — dark band with gold flourish + deer watermark */}
+      <section className="band-dark-mesh relative overflow-hidden py-20 md:py-32 top-accent">
+        {/* Deer watermark */}
+        <DeerMotif className="absolute -top-10 -right-10 md:top-4 md:right-12 text-[#e6c487] opacity-[0.05]" size={340} />
+        <DeerMotif className="absolute -bottom-12 -left-12 text-[#e6c487] opacity-[0.04] hidden md:block" size={260} />
+
+        <div className="relative z-10 container mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center reveal-up">
+            <FlourishDivider label="We'd Love to Hear From You" variant="light" className="mb-8" />
+            <h1
+              className="font-headline italic text-white leading-[1.05] mb-6 drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)]"
+              style={{ fontSize: 'clamp(2.8rem, 8vw, 5.5rem)' }}
+            >
+              Get in Touch
+            </h1>
+            <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+              Whether you&rsquo;re booking a table, planning an event, or simply want
+              to say hello &mdash; we&rsquo;re always here.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-sm">
+              <a
+                href={CONTACT.phoneHref}
+                className="inline-flex items-center gap-2 text-[#e6c487] hover:text-white transition-colors font-label tracking-wide"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+                {CONTACT.phone}
+              </a>
+              <span className="text-white/25" aria-hidden="true">·</span>
+              <a
+                href={CONTACT.emailHref}
+                className="inline-flex items-center gap-2 text-[#e6c487] hover:text-white transition-colors font-label tracking-wide"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                {CONTACT.email}
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Contact Details + Form */}
-      <section className="bg-surface-container-low py-24 md:py-32">
-        <div className="container mx-auto px-6 lg:px-8">
+      {/* Contact Details + Form — on blush background with paper texture */}
+      <section className="bg-blush paper-texture relative overflow-hidden py-24 md:py-32">
+        {/* Subtle deer watermark corner */}
+        <DeerMotif className="absolute top-1/2 -right-16 -translate-y-1/2 text-[#9E7C3C] opacity-[0.04] hidden lg:block" size={400} />
+        <div className="container mx-auto px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-[380px_1fr] xl:grid-cols-[420px_1fr] gap-16 lg:gap-24">
             {/* ========== LEFT: Contact info ========== */}
             <div className="space-y-10 reveal-left">
