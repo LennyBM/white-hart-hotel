@@ -80,7 +80,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           </svg>
         </button>
 
-        <nav className="flex flex-col items-center gap-8">
+        <nav className="flex flex-col items-center gap-7">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.to;
             return (
@@ -99,7 +99,29 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           })}
         </nav>
 
-        <div className="mt-12 flex flex-col items-center gap-4">
+        {/* Quick sub-links */}
+        <div className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 max-w-xs">
+          {[
+            { label: 'Black Rock Grill', to: '/black-rock-grill' },
+            { label: 'VINYL Menu', to: '/vinyl-menu' },
+            { label: 'Poker', to: '/whats-on/poker' },
+            { label: 'Pool & Darts', to: '/whats-on/pool' },
+            { label: 'Karaoke', to: '/whats-on/karaoke' },
+            { label: 'Our Story', to: '/our-story' },
+            { label: 'Pop Up Bar', to: '/pop-up-bar' },
+          ].map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              onClick={handleLinkClick}
+              className="text-[#A09889] hover:text-[#e6c487] transition-colors text-xs font-label tracking-wide"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-10 flex flex-col items-center gap-4">
           <a
             href={CONTACT.phoneHref}
             className="bg-primary text-on-primary px-10 py-4 rounded-md font-label font-bold text-sm tracking-widest uppercase min-h-[44px] flex items-center"

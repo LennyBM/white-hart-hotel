@@ -30,8 +30,8 @@ export function TodayStrip() {
         <div className="flex items-center gap-3 min-w-0">
           <span className="font-label text-[9px] uppercase tracking-[0.3em] text-primary font-bold shrink-0">Tonight</span>
           <span className="w-px h-3 bg-primary/30 shrink-0" />
-          <span className="font-headline italic text-on-surface text-sm truncate">{event.label}</span>
-          <span className="text-on-surface-variant text-xs hidden sm:block truncate">— {event.detail}</span>
+          <span className="font-headline italic text-on-surface text-sm shrink-0">{event.label}</span>
+          <span className="text-on-surface-variant text-xs truncate">· {event.detail}</span>
         </div>
         <svg className="w-4 h-4 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

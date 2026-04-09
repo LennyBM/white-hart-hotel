@@ -36,8 +36,8 @@ export function MobileBottomBar() {
         {/* Call */}
         <a
           href={CONTACT.phoneHref}
-          className="flex flex-col items-center justify-center gap-0.5 text-white/60 hover:text-white transition-colors"
-          style={{ minHeight: '56px', width: '60px' }}
+          className="flex flex-col items-center justify-center gap-0.5 text-white/60 hover:text-white transition-colors border-r border-white/10"
+          style={{ minHeight: '56px', width: '80px' }}
           aria-label="Call The White Hart"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>

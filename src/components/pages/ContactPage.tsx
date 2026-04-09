@@ -597,6 +597,7 @@ export function ContactPage() {
                               <input
                                 id="step-name"
                                 type="text"
+                                autoComplete="name"
                                 value={formData.name}
                                 onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))}
                                 className={inputClass}
@@ -613,6 +614,7 @@ export function ContactPage() {
                               <input
                                 id="step-email"
                                 type="email"
+                                autoComplete="email"
                                 value={formData.email}
                                 onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
                                 className={inputClass}
@@ -629,6 +631,7 @@ export function ContactPage() {
                               <input
                                 id="step-phone"
                                 type="tel"
+                                autoComplete="tel"
                                 value={formData.phone}
                                 onChange={(e) => setFormData((p) => ({ ...p, phone: e.target.value }))}
                                 className={inputClass}

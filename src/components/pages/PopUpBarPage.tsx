@@ -370,6 +370,7 @@ export function PopUpBarPage() {
                     type="text"
                     name="name"
                     required
+                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     className="ghost-input w-full"
@@ -386,6 +387,7 @@ export function PopUpBarPage() {
                     type="email"
                     name="email"
                     required
+                    autoComplete="email"
                     value={formData.email}
                     onChange={handleChange}
                     className="ghost-input w-full"
@@ -403,6 +405,7 @@ export function PopUpBarPage() {
                   id="popup-phone"
                   type="tel"
                   name="phone"
+                  autoComplete="tel"
                   value={formData.phone}
                   onChange={handleChange}
                   className="ghost-input w-full"

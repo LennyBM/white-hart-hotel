@@ -137,8 +137,8 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-outline-variant/10 py-6 text-center">
+      {/* Bottom bar — extra bottom padding on mobile to clear the fixed MobileBottomBar */}
+      <div className="border-t border-outline-variant/10 pt-6 pb-24 md:pb-6 text-center">
         <p className="font-label text-xs text-[#A09889]/40">
           &copy; {year} {CONTACT.name}. All rights reserved.
         </p>
