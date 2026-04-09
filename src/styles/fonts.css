@@ -1,20 +1,35 @@
-/* Newsreader — Variable Serif/Headline Font */
+/* ─── Newsreader — italic only (all headlines use font-headline italic) ─── */
+/* Removed normal-style Newsreader entirely — not referenced in the design.  */
 @font-face {
   font-family: 'Newsreader';
-  font-style: normal;
-  font-weight: 300 700;
+  font-style: italic;
+  font-weight: 300;
   font-display: swap;
-  src: url('/fonts/newsreader-400.woff2') format('woff2');
+  src: url('/fonts/newsreader-300i.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Newsreader';
   font-style: italic;
-  font-weight: 300 700;
+  font-weight: 400;
   font-display: swap;
   src: url('/fonts/newsreader-400i.woff2') format('woff2');
 }
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/newsreader-600i.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/newsreader-700i.woff2') format('woff2');
+}
 
-/* Inter — Variable Sans/Body/Label Font */
+/* ─── Inter — all weights (used for body, labels, and UI text) ─── */
 @font-face {
   font-family: 'Inter';
   font-style: normal;

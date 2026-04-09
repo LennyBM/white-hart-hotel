@@ -12,10 +12,22 @@
     <meta name="theme-color" content="#FDFBF7" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#221E1A" media="(prefers-color-scheme: dark)" />
     <meta name="color-scheme" content="light dark" />
+    <!-- Preload critical fonts before CSS parses -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader-400i.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin />
+    <!-- Preload LCP hero image -->
+    <link rel="preload" as="image" href="/images/hero-exterior.webp" type="image/webp" fetchpriority="high" />
+    <!-- Preconnect to external origins -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
     <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
-    <link rel="preload" as="image" href="/images/hero-exterior.webp" type="image/webp" fetchpriority="high" />
+    <!-- DNS prefetch for third-party origins -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+    <link rel="dns-prefetch" href="https://www.facebook.com" />
+    <link rel="dns-prefetch" href="https://booking-directly.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>The White Hart Hotel | Historic Pub, Restaurant &amp; Hotel in Holsworthy, Devon</title>
     <meta name="description" content="The White Hart Hotel, Holsworthy — a historic family-run pub, restaurant and hotel dating back to 1591. Dine, stay and celebrate in the heart of Devon." />
