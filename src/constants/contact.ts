@@ -1,0 +1,53 @@
+export const CONTACT = {
+  name: 'The White Hart Hotel',
+  address: {
+    number: '3',
+    street: 'Fore Street',
+    town: 'Holsworthy',
+    county: 'Devon',
+    postcode: 'EX22 6EB',
+    full: 'The White Hart Hotel, 3 Fore Street, Holsworthy, Devon, EX22 6EB',
+  },
+  phone: '01409 253475',
+  phoneHref: 'tel:+441409253475',
+  email: 'info@whiteharthotel.co.uk',
+  emailHref: 'mailto:info@whiteharthotel.co.uk',
+  popUpBarEmail: 'events@pop-up-bar-company.co.uk',
+  whatsapp: 'https://wa.me/441409253475',
+  facebook: 'https://www.facebook.com/whitehartholsworthy',
+  feedMeOnline: 'https://www.feedmeonline.co.uk/takeaways/Exeter/EX22%206EB/the-white-hart/menu',
+  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.8!2d-4.3542!3d50.8113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486c10e1d4c7e4ed%3A0x3b0b4c2e3f8c1a2d!2sFore+St%2C+Holsworthy+EX22+6EB!5e0!3m2!1sen!2suk!4v1',
+  googleMapsLink: 'https://www.google.com/maps/dir/?api=1&destination=The+White+Hart+Hotel+Fore+Street+Holsworthy+Devon+EX22+6EB',
+  instagram: 'https://www.instagram.com/whitehartholsworthy/',
+  tripadvisor: 'https://www.tripadvisor.com/Hotel_Review-g776112-d1913385-Reviews-White_Hart_Hotel-Holsworthy_Torridge_Devon_England.html',
+  bookingCom: 'https://www.booking.com/hotel/gb/the-white-hart-holsworthy.en-gb.html',
+  bookingWidget: 'https://booking-directly.com/widgets/gCrAJ1iHwTnL2YNP44S1JwYanECIEtytE9QYavyb7ttg1IOsQgU34OUB54Bh8/properties/unit-selection',
+  vinylFacebook: 'https://www.facebook.com/vinylholsworthy/',
+  justEat: 'https://www.just-eat.co.uk/restaurants-white-hart-hotel-holsworthy/menu?utm_source=whiteharthotel&utm_medium=website&utm_campaign=takeaway',
+  camra: 'https://camra.org.uk/pubs/white-hart-hotel-holsworthy-188237',
+  historicEngland: 'https://historicengland.org.uk/listing/the-list/list-entry/1104942',
+  siteUrl: 'https://whitehartholsworthy.co.uk',
+  coordinates: { lat: 50.8113, lng: -4.3542 },
+} as const;
+
+export const NAV_LINKS = [
+  { label: 'Dining', to: '/dining' },
+  { label: 'Menu', to: '/menu' },
+  { label: "What's On", to: '/whats-on' },
+  { label: 'Rooms', to: '/rooms' },
+  { label: 'Takeaway', to: '/takeaway' },
+  { label: 'Contact', to: '/contact' },
+] as const;
+
+export const FOOTER_EXPLORE_LINKS = [
+  { label: 'Dining', to: '/dining' },
+  { label: 'Food Menu', to: '/menu' },
+  { label: 'Black Rock Grill', to: '/black-rock-grill' },
+  { label: 'Takeaway & Delivery', to: '/takeaway' },
+  { label: 'VINYL Menu', to: '/vinyl-menu' },
+  { label: 'Rooms', to: '/rooms' },
+  { label: "What's On", to: '/whats-on' },
+  { label: 'Pop Up Bar', to: '/pop-up-bar' },
+  { label: 'Our Story', to: '/our-story' },
+  { label: 'Contact', to: '/contact' },
+] as const;

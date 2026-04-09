@@ -1,0 +1,24 @@
+/* Newsreader — Variable Serif/Headline Font */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/newsreader-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/newsreader-400i.woff2') format('woff2');
+}
+
+/* Inter — Variable Sans/Body/Label Font */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/inter-400.woff2') format('woff2');
+}

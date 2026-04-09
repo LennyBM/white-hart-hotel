@@ -1,0 +1,46 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Build artefacts
+.netlify
+.claude
+tmp-init
+
+# Image scraping backup (not needed in repo)
+public/images/_unused/
+
+# Local source assets that aren't served directly
+*.jpg.bak
+*.png.bak
+/best white hart exterior image.png
+/sunday carvery.jpg
+/white hart favicon.jpg
+/Viynl Seating area.jpg
+/lppl tuesdays poster*.png
+/kareoke first night of the month.jpg
+/white hart just eat.jpg
+/white hart pizza just eat.jpg
+/white hart menu-*.pdf
+/stitch/
