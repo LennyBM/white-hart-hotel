@@ -67,7 +67,7 @@ export function WhatsOnPage() {
 
   return (
     <>
-      <SEOHead page="whatsOn" />
+      <SEOHead page="whatsOn" breadcrumbs={[{ name: "What's On", url: `/whats-on` }]} />
       {featuredEvents.map((event) => (
         <SchemaOrg key={event.id} type="Event" data={{ name: event.title, description: event.description, image: `${CONTACT.siteUrl}${event.image}` }} />
       ))}

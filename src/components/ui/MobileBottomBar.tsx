@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { CONTACT } from '../../constants/contact';
+import { trackPhoneClick, trackOutboundClick } from './Analytics';
 
 const ROUTE_CTA: Record<string, { label: string; to: string }> = {
   '/rooms': { label: 'Book a Room', to: '/contact' },
@@ -36,6 +37,7 @@ export function MobileBottomBar() {
         {/* Call */}
         <a
           href={CONTACT.phoneHref}
+          onClick={() => trackPhoneClick('mobile_bottom_bar')}
           className="flex flex-col items-center justify-center gap-0.5 text-white/60 hover:text-white transition-colors border-r border-white/10"
           style={{ minHeight: '56px', width: '80px' }}
           aria-label="Call The White Hart"
@@ -52,6 +54,7 @@ export function MobileBottomBar() {
             href={cta.to}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackOutboundClick(cta.to, cta.label)}
             className="flex-1 flex items-center justify-center font-label font-bold text-sm uppercase tracking-widest"
             style={{ background: '#9E7C3C', color: '#fff', minHeight: '56px' }}
           >

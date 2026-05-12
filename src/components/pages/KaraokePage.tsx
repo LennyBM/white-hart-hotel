@@ -5,7 +5,7 @@ import { CONTACT } from '../../constants/contact';
 export default function KaraokePage() {
   return (
     <>
-      <SEOHead page="karaoke" />
+      <SEOHead page="karaoke" breadcrumbs={[{ name: "What's On", url: `/whats-on` }, { name: "Karaoke", url: `/whats-on/karaoke` }]} />
 
       {/* ══ HERO — rich magenta/amber stage-lights ambient ══ */}
       <section className="relative min-h-[54vh] md:min-h-[62vh] flex items-end overflow-hidden bg-[#0e0b08]">

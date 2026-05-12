@@ -1,3 +1,26 @@
+/*
+ * Size-adjusted fallback fonts — prevent CLS during font-swap
+ * Values calibrated against Inter (body) and Newsreader (headlines)
+ */
+@font-face {
+  font-family: 'Inter-Fallback';
+  src: local('Arial');
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Newsreader-Fallback';
+  src: local('Georgia');
+  font-style: italic;
+  size-adjust: 97%;
+  ascent-override: 90%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+}
+
 /* ─── Newsreader — italic only (all headlines use font-headline italic) ─── */
 /* Removed normal-style Newsreader entirely — not referenced in the design.  */
 @font-face {

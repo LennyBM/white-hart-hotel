@@ -27,6 +27,8 @@ const BlogPage = lazy(() => import('./components/pages/BlogPage').then(resolveDe
 const PokerPage = lazy(() => import('./components/pages/PokerPage').then(resolveDefault));
 const PoolPage = lazy(() => import('./components/pages/PoolPage').then(resolveDefault));
 const KaraokePage = lazy(() => import('./components/pages/KaraokePage').then(resolveDefault));
+const AccessibilityPage = lazy(() => import('./components/pages/AccessibilityPage').then(resolveDefault));
+const FAQPage = lazy(() => import('./components/pages/FAQPage').then(resolveDefault));
 
 function LoadingSpinner() {
   return (
@@ -60,6 +62,8 @@ export function App() {
               <Route path="privacy" element={<PrivacyPage />} />
               <Route path="terms" element={<TermsPage />} />
               <Route path="cookies" element={<CookiesPage />} />
+              <Route path="accessibility" element={<AccessibilityPage />} />
+              <Route path="faqs" element={<FAQPage />} />
               <Route path="news" element={<BlogPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Route>

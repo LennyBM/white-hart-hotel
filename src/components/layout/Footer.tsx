@@ -1,30 +1,31 @@
 import { Link } from 'react-router-dom';
 import { CONTACT, FOOTER_EXPLORE_LINKS } from '../../constants/contact';
 import { openingHours, kitchenNote } from '../../data/openingHours';
+import { trackPhoneClick, trackEmailClick } from '../ui/Analytics';
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#221E1A] border-t border-outline-variant/10 relative overflow-hidden">
+    <footer className="bg-footer-surface border-t border-outline-variant/10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-10 md:py-14">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1 space-y-4">
-            <Link to="/" className="text-xl font-headline italic text-[#e6c487]">
+            <Link to="/" className="text-xl font-headline italic text-inverse-primary">
               The White Hart Hotel
             </Link>
-            <p className="text-[#A09889] text-sm leading-relaxed max-w-xs">
+            <p className="text-footer-text text-sm leading-relaxed max-w-xs">
               {CONTACT.address.full}
             </p>
-            <p className="text-[#A09889] text-sm">
+            <p className="text-footer-text text-sm">
               Tel:{' '}
-              <a href={CONTACT.phoneHref} className="hover:text-[#e6c487] transition-colors">
+              <a href={CONTACT.phoneHref} onClick={() => trackPhoneClick('footer')} className="hover:text-inverse-primary transition-colors">
                 {CONTACT.phone}
               </a>
             </p>
-            <p className="text-[#A09889] text-sm">
-              <a href={CONTACT.emailHref} className="hover:text-[#e6c487] transition-colors">
+            <p className="text-footer-text text-sm">
+              <a href={CONTACT.emailHref} onClick={() => trackEmailClick('footer')} className="hover:text-inverse-primary transition-colors">
                 {CONTACT.email}
               </a>
             </p>
@@ -32,7 +33,7 @@ export function Footer() {
 
           {/* Explore — 2-column grid to save vertical space */}
           <div className="col-span-2 md:col-span-2 space-y-4">
-            <h3 className="font-label uppercase tracking-[0.2em] text-[#e6c487] text-xs font-bold">
+            <h3 className="font-label uppercase tracking-[0.2em] text-inverse-primary text-xs font-bold">
               Explore
             </h3>
             <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
@@ -40,7 +41,7 @@ export function Footer() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-[#A09889] text-sm hover:text-[#E5E2E1] transition-colors duration-300 inline-block py-0.5"
+                    className="text-footer-text text-sm hover:text-footer-text-bright transition-colors duration-300 inline-block py-0.5"
                   >
                     {link.label}
                   </Link>
@@ -51,7 +52,7 @@ export function Footer() {
 
           {/* Connect */}
           <div className="space-y-4">
-            <h3 className="font-label uppercase tracking-[0.2em] text-[#e6c487] text-xs font-bold">
+            <h3 className="font-label uppercase tracking-[0.2em] text-inverse-primary text-xs font-bold">
               Connect
             </h3>
             <ul className="space-y-3">
@@ -60,7 +61,7 @@ export function Footer() {
                   href={CONTACT.googleMapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#A09889] text-sm hover:text-[#E5E2E1] transition-colors duration-300"
+                  className="text-footer-text text-sm hover:text-footer-text-bright transition-colors duration-300"
                 >
                   Google Maps
                 </a>
@@ -68,15 +69,15 @@ export function Footer() {
             </ul>
             <div className="flex gap-4 mt-4">
               {/* Facebook */}
-              <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-[#A09889] hover:text-[#1877F2] transition-colors">
+              <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-footer-text hover:text-[#1877F2] transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
               </a>
               {/* Instagram */}
-              <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#A09889] hover:text-[#E4405F] transition-colors">
+              <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-footer-text hover:text-[#E4405F] transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
               </a>
               {/* TripAdvisor */}
-              <a href={CONTACT.tripadvisor} target="_blank" rel="noopener noreferrer" aria-label="TripAdvisor" className="text-[#A09889] hover:text-[#00af87] transition-colors">
+              <a href={CONTACT.tripadvisor} target="_blank" rel="noopener noreferrer" aria-label="TripAdvisor" className="text-footer-text hover:text-[#00af87] transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 004.04 10.43 5.976 5.976 0 004.075-1.6L12 19.536l1.918-1.918a5.98 5.98 0 004.08 1.6 5.997 5.997 0 004.04-10.43L24 6.648h-4.35a13.573 13.573 0 00-7.644-2.353zM6.003 17.2a3.998 3.998 0 110-7.995 3.998 3.998 0 010 7.996zm11.994 0a3.998 3.998 0 110-7.996 3.998 3.998 0 010 7.996zM6.003 11.204a2 2 0 100 3.999 2 2 0 000-4zm11.994 0a2 2 0 100 4 2 2 0 000-4z"/></svg>
               </a>
             </div>
@@ -84,10 +85,10 @@ export function Footer() {
 
           {/* Hours — mapped from openingHours data */}
           <div className="col-span-2 md:col-span-1 space-y-4">
-            <h3 className="font-label uppercase tracking-[0.2em] text-[#e6c487] text-xs font-bold">
+            <h3 className="font-label uppercase tracking-[0.2em] text-inverse-primary text-xs font-bold">
               Hours
             </h3>
-            <ul className="space-y-2 text-sm text-[#A09889]">
+            <ul className="space-y-2 text-sm text-footer-text">
               {openingHours.map((entry) => (
                 <li key={entry.days}>
                   {entry.days}: {entry.hours}
@@ -100,22 +101,22 @@ export function Footer() {
       </div>
 
       {/* Book Direct CTA */}
-      <div className="border-t border-[#2C2825] bg-[#2C2825]">
+      <div className="border-t border-footer-surface-alt bg-footer-surface-alt">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
-            <p className="font-headline text-lg text-[#E5E2E1]">
+            <p className="font-headline text-lg text-footer-text-bright">
               Book Direct &mdash;{' '}
-              <a href={CONTACT.phoneHref} className="text-[#e6c487] hover:underline font-semibold">
+              <a href={CONTACT.phoneHref} onClick={() => trackPhoneClick('footer_cta')} className="text-inverse-primary hover:underline font-semibold">
                 {CONTACT.phone}
               </a>
             </p>
-            <p className="text-[#A09889] text-sm mt-1">
+            <p className="text-footer-text text-sm mt-1">
               Best rates guaranteed when you book direct
             </p>
           </div>
           <Link
             to="/contact"
-            className="inline-flex bg-[#e6c487] text-[#221E1A] px-8 py-3 rounded-md font-label font-bold text-sm uppercase tracking-widest transition-all duration-300 hover:bg-[#d4b070] btn-shimmer"
+            className="inline-flex bg-inverse-primary text-footer-surface px-8 py-3 rounded-md font-label font-bold text-sm uppercase tracking-widest transition-all duration-300 hover:bg-primary-fixed-dim btn-shimmer"
           >
             Book Now
           </Link>
@@ -125,21 +126,34 @@ export function Footer() {
       {/* Legal links */}
       <div className="border-t border-outline-variant/10 py-4">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-wrap justify-center gap-6">
-          <Link to="/privacy" className="text-[#A09889]/60 text-xs hover:text-[#E5E2E1] transition-colors">
+          <Link to="/privacy" className="text-footer-text/60 text-xs hover:text-footer-text-bright transition-colors">
             Privacy Policy
           </Link>
-          <Link to="/terms" className="text-[#A09889]/60 text-xs hover:text-[#E5E2E1] transition-colors">
+          <Link to="/terms" className="text-footer-text/60 text-xs hover:text-footer-text-bright transition-colors">
             Terms of Service
           </Link>
-          <Link to="/cookies" className="text-[#A09889]/60 text-xs hover:text-[#E5E2E1] transition-colors">
+          <Link to="/cookies" className="text-footer-text/60 text-xs hover:text-footer-text-bright transition-colors">
             Cookie Policy
           </Link>
+          <Link to="/accessibility" className="text-footer-text/60 text-xs hover:text-footer-text-bright transition-colors">
+            Accessibility
+          </Link>
+        </div>
+      </div>
+
+      {/* Companies Act 2006 disclosures + ICO registration */}
+      <div className="border-t border-outline-variant/10 py-3">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center space-y-1">
+          <p className="font-label text-[10px] text-footer-text/40 leading-relaxed">
+            {CONTACT.name} &mdash; Registered Office: {CONTACT.address.full}
+            {' '}&mdash; Company No. {CONTACT.companyNumber} &mdash; ICO Reg. {CONTACT.icoNumber}
+          </p>
         </div>
       </div>
 
       {/* Bottom bar — extra bottom padding on mobile to clear the fixed MobileBottomBar */}
       <div className="border-t border-outline-variant/10 pt-6 pb-24 md:pb-6 text-center">
-        <p className="font-label text-xs text-[#A09889]/40">
+        <p className="font-label text-xs text-footer-text/40">
           &copy; {year} {CONTACT.name}. All rights reserved.
         </p>
       </div>

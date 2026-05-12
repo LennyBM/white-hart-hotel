@@ -8,7 +8,7 @@ import { FlourishDivider } from '../ui/FlourishDivider';
 import { CONTACT } from '../../constants/contact';
 import { openingHours, kitchenNote } from '../../data/openingHours';
 import { faqs } from '../../data/faq';
-import { trackFormSubmission, getUtmParams } from '../ui/Analytics';
+import { trackFormSubmission, trackFormStep, getUtmParams } from '../ui/Analytics';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -203,11 +203,14 @@ export function ContactPage() {
   const goTo = (target: FormStep) => {
     setSlideDir(target > step ? 'left' : 'right');
     setStep(target);
+    trackFormStep(target, formData.reason);
   };
 
   const selectReason = (key: ReasonKey) => {
     setFormData((prev) => ({ ...prev, reason: key }));
-    goTo(2);
+    setSlideDir('left');
+    setStep(2);
+    trackFormStep(2, key);
   };
 
 
@@ -281,7 +284,7 @@ export function ContactPage() {
 
   return (
     <>
-      <SEOHead page="contact" />
+      <SEOHead page="contact" breadcrumbs={[{ name: "Contact", url: `/contact` }]} />
       <SchemaOrg type="FAQ" data={{ items: faqs }} />
 
       {/* Inline keyframes for slide transitions */}

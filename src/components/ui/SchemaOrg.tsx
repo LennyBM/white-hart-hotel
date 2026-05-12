@@ -1,25 +1,116 @@
+import { Helmet } from 'react-helmet-async';
 import { CONTACT } from '../../constants/contact';
 
-interface SchemaOrgProps {
-  type: 'LocalBusiness' | 'Restaurant' | 'Hotel' | 'Event' | 'BreadcrumbList' | 'FAQ' | 'Organization';
-  data?: Record<string, unknown>;
+// Stable canonical IDs — one entity, one @id, reused across every page
+export const SCHEMA_IDS = {
+  organization: `${CONTACT.siteUrl}/#organization`,
+  website: `${CONTACT.siteUrl}/#website`,
+  localBusiness: `${CONTACT.siteUrl}/#localbusiness`,
+} as const;
+
+// International-format telephone (required for Google Rich Results)
+const TEL_INTL = '+441409253475';
+
+// Three image ratios Google recommends for LocalBusiness/Hotel
+const BUSINESS_IMAGES = [
+  `${CONTACT.siteUrl}/images/hero-exterior.webp`,      // 16:9
+  `${CONTACT.siteUrl}/images/story-interior.webp`,     // 4:3
+  `${CONTACT.siteUrl}/images/og-image.jpg`,            // 1:1-ish (1200×630)
+];
+
+interface BlogPostingData {
+  '@type': 'BlogPosting';
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified: string;
+  author: Record<string, unknown>;
+  publisher: Record<string, unknown>;
+  url: string;
+  mainEntityOfPage: string;
+  keywords?: string;
+  articleSection?: string;
 }
 
-export function SchemaOrg({ type, data }: SchemaOrgProps) {
+interface SchemaOrgProps {
+  type: 'LocalBusiness' | 'Restaurant' | 'Hotel' | 'Event' | 'BreadcrumbList' | 'FAQ' | 'Organization' | 'Person' | 'BlogPosting' | 'blogPostings' | 'ContactPage';
+  data?: Record<string, unknown>;
+  blogPostings?: BlogPostingData[];
+}
+
+export function SchemaOrg({ type, data, blogPostings }: SchemaOrgProps) {
   let schema: Record<string, unknown> = {};
 
-  if (type === 'LocalBusiness') {
+  if (type === 'Organization') {
+    // Site-wide Organisation — rendered once in Layout.tsx
+    // Also emits the WebSite entity so sitelinks search box is eligible
+    schema = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': SCHEMA_IDS.organization,
+          name: CONTACT.name,
+          legalName: 'The White Hart Hotel',
+          url: CONTACT.siteUrl,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${CONTACT.siteUrl}/apple-touch-icon.png`,
+            width: 180,
+            height: 180,
+          },
+          image: BUSINESS_IMAGES,
+          description:
+            'A historic family-run pub, restaurant and hotel in Holsworthy, Devon, dating back to 1591. Grade II Listed coaching inn run by Jon and Tam Hutchings.',
+          telephone: TEL_INTL,
+          email: CONTACT.email,
+          foundingDate: '1591',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: `${CONTACT.address.number} ${CONTACT.address.street}`,
+            addressLocality: CONTACT.address.town,
+            addressRegion: CONTACT.address.county,
+            postalCode: CONTACT.address.postcode,
+            addressCountry: 'GB',
+          },
+          contactPoint: {
+            '@type': 'ContactPoint',
+            telephone: TEL_INTL,
+            contactType: 'Reservations',
+            email: CONTACT.email,
+            areaServed: 'GB',
+            availableLanguage: 'English',
+          },
+          sameAs: [
+            CONTACT.facebook,
+            CONTACT.instagram,
+            CONTACT.tripadvisor,
+            CONTACT.bookingCom,
+            CONTACT.camra,
+          ],
+        },
+        {
+          '@type': 'WebSite',
+          '@id': SCHEMA_IDS.website,
+          url: CONTACT.siteUrl,
+          name: CONTACT.name,
+          description: 'Historic pub, restaurant and hotel in Holsworthy, Devon since 1591.',
+          publisher: { '@id': SCHEMA_IDS.organization },
+          inLanguage: 'en-GB',
+        },
+      ],
+    };
+  } else if (type === 'LocalBusiness') {
     schema = {
       '@context': 'https://schema.org',
       '@type': ['BarOrPub', 'Hotel'],
+      '@id': SCHEMA_IDS.localBusiness,
       name: CONTACT.name,
-      description: 'A historic family-run pub, restaurant and hotel in Holsworthy, Devon, dating back to 1591. Grade II Listed coaching inn serving traditional British food, stone-baked pizzas, real ales and boutique accommodation.',
-      image: [
-        `${CONTACT.siteUrl}/images/hero-exterior.webp`,
-        `${CONTACT.siteUrl}/images/og-image.jpg`,
-      ],
+      description:
+        'A historic family-run pub, restaurant and hotel in Holsworthy, Devon, dating back to 1591. Grade II Listed coaching inn serving traditional British food, stone-baked pizzas, real ales and boutique accommodation.',
+      image: BUSINESS_IMAGES,
       url: CONTACT.siteUrl,
-      telephone: CONTACT.phone,
+      telephone: TEL_INTL,
       email: CONTACT.email,
       address: {
         '@type': 'PostalAddress',
@@ -55,10 +146,12 @@ export function SchemaOrg({ type, data }: SchemaOrgProps) {
         CONTACT.bookingCom,
         CONTACT.camra,
       ],
+      // aggregateRating — UPDATE quarterly with current Booking.com/TripAdvisor figures
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '7.2',
         bestRating: '10',
+        worstRating: '1',
         ratingCount: '283',
         reviewCount: '283',
       },
@@ -72,10 +165,11 @@ export function SchemaOrg({ type, data }: SchemaOrgProps) {
         { '@type': 'LocationFeatureSpecification', name: 'Pool Table', value: true },
         { '@type': 'LocationFeatureSpecification', name: 'Real Ale', value: true },
         { '@type': 'LocationFeatureSpecification', name: 'Dog Friendly', value: true },
+        { '@type': 'LocationFeatureSpecification', name: 'Free Parking Nearby', value: true },
       ],
-      starRating: { '@type': 'Rating', ratingValue: '2' },
-      checkinTime: '14:00',
-      checkoutTime: '10:30',
+      // Hotel-specific fields (dual-typed entity)
+      checkinTime: 'T14:00',
+      checkoutTime: 'T10:30',
       numberOfRooms: 6,
       petsAllowed: true,
     };
@@ -83,22 +177,27 @@ export function SchemaOrg({ type, data }: SchemaOrgProps) {
     schema = {
       '@context': 'https://schema.org',
       '@type': 'Restaurant',
-      name: 'The White Hart Hotel - Restaurant',
+      '@id': `${CONTACT.siteUrl}/dining#restaurant`,
+      name: 'The White Hart Hotel — Restaurant',
       servesCuisine: ['British', 'Traditional English', 'Pizza'],
       url: `${CONTACT.siteUrl}/dining`,
-      telephone: CONTACT.phone,
+      telephone: TEL_INTL,
+      image: BUSINESS_IMAGES,
       address: {
         '@type': 'PostalAddress',
-        streetAddress: CONTACT.address.street,
+        streetAddress: `${CONTACT.address.number} ${CONTACT.address.street}`,
         addressLocality: CONTACT.address.town,
+        addressRegion: CONTACT.address.county,
         postalCode: CONTACT.address.postcode,
         addressCountry: 'GB',
       },
       priceRange: '££',
+      // aggregateRating — UPDATE quarterly with current review platform figures
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '4.7',
         bestRating: '5',
+        worstRating: '1',
         ratingCount: '17',
         reviewCount: '17',
       },
@@ -110,28 +209,31 @@ export function SchemaOrg({ type, data }: SchemaOrgProps) {
       ],
       hasMenu: {
         '@type': 'Menu',
-        url: `${CONTACT.siteUrl}/dining`,
+        url: `${CONTACT.siteUrl}/menu`,
       },
     };
   } else if (type === 'Hotel') {
     schema = {
       '@context': 'https://schema.org',
       '@type': 'Hotel',
+      '@id': `${CONTACT.siteUrl}/rooms#hotel`,
       name: CONTACT.name,
       url: `${CONTACT.siteUrl}/rooms`,
-      telephone: CONTACT.phone,
+      telephone: TEL_INTL,
+      image: BUSINESS_IMAGES,
       priceRange: 'From £58/night',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: CONTACT.address.street,
+        streetAddress: `${CONTACT.address.number} ${CONTACT.address.street}`,
         addressLocality: CONTACT.address.town,
+        addressRegion: CONTACT.address.county,
         postalCode: CONTACT.address.postcode,
         addressCountry: 'GB',
       },
       numberOfRooms: 6,
       petsAllowed: true,
-      checkinTime: '14:00',
-      checkoutTime: '10:30',
+      checkinTime: 'T14:00',
+      checkoutTime: 'T10:30',
       amenityFeature: [
         { '@type': 'LocationFeatureSpecification', name: 'Free WiFi', value: true },
         { '@type': 'LocationFeatureSpecification', name: 'Pet Friendly', value: true },
@@ -140,6 +242,39 @@ export function SchemaOrg({ type, data }: SchemaOrgProps) {
         { '@type': 'LocationFeatureSpecification', name: 'Flat Screen TV', value: true },
         { '@type': 'LocationFeatureSpecification', name: 'Free Parking Nearby', value: true },
       ],
+    };
+  } else if (type === 'Person' && data) {
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      ...data,
+    };
+  } else if (type === 'BlogPosting' && data) {
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      publisher: {
+        '@id': SCHEMA_IDS.organization,
+      },
+      ...data,
+    };
+  } else if (type === 'blogPostings' && blogPostings?.length) {
+    schema = {
+      '@context': 'https://schema.org',
+      '@graph': blogPostings.map((post) => ({
+        ...post,
+        publisher: { '@id': SCHEMA_IDS.organization },
+      })),
+    };
+  } else if (type === 'ContactPage') {
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      '@id': `${CONTACT.siteUrl}/contact#webpage`,
+      url: `${CONTACT.siteUrl}/contact`,
+      name: `Contact ${CONTACT.name}`,
+      isPartOf: { '@id': SCHEMA_IDS.website },
+      about: { '@id': SCHEMA_IDS.localBusiness },
     };
   } else if (type === 'BreadcrumbList' && data) {
     schema = {
@@ -151,7 +286,7 @@ export function SchemaOrg({ type, data }: SchemaOrgProps) {
     schema = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: (data.items as Array<{question: string; answer: string}>).map(item => ({
+      mainEntity: (data.items as Array<{ question: string; answer: string }>).map((item) => ({
         '@type': 'Question',
         name: item.question,
         acceptedAnswer: {
@@ -159,43 +294,6 @@ export function SchemaOrg({ type, data }: SchemaOrgProps) {
           text: item.answer,
         },
       })),
-    };
-  } else if (type === 'Organization') {
-    schema = {
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: CONTACT.name,
-      legalName: 'The White Hart Hotel',
-      url: CONTACT.siteUrl,
-      logo: `${CONTACT.siteUrl}/apple-touch-icon.png`,
-      image: `${CONTACT.siteUrl}/images/hero-exterior.jpg`,
-      description:
-        'A historic family-run pub, restaurant and hotel in Holsworthy, Devon, dating back to 1591. Grade II Listed building run by Jon and Tam Hutchings.',
-      telephone: CONTACT.phone,
-      email: CONTACT.email,
-      foundingDate: '1591',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: `${CONTACT.address.number} ${CONTACT.address.street}`,
-        addressLocality: CONTACT.address.town,
-        addressRegion: CONTACT.address.county,
-        postalCode: CONTACT.address.postcode,
-        addressCountry: 'GB',
-      },
-      contactPoint: {
-        '@type': 'ContactPoint',
-        telephone: CONTACT.phone,
-        contactType: 'Reservations',
-        email: CONTACT.email,
-        areaServed: 'GB',
-        availableLanguage: 'English',
-      },
-      sameAs: [
-        CONTACT.facebook,
-        CONTACT.instagram,
-        CONTACT.tripadvisor,
-        CONTACT.bookingCom,
-      ],
     };
   } else if (type === 'Event' && data) {
     schema = {
@@ -207,19 +305,21 @@ export function SchemaOrg({ type, data }: SchemaOrgProps) {
         name: CONTACT.name,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: CONTACT.address.street,
+          streetAddress: `${CONTACT.address.number} ${CONTACT.address.street}`,
           addressLocality: CONTACT.address.town,
           postalCode: CONTACT.address.postcode,
           addressCountry: 'GB',
         },
       },
+      organizer: { '@id': SCHEMA_IDS.organization },
     };
   }
 
+  if (!Object.keys(schema).length) return null;
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
   );
 }

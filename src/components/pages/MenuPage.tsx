@@ -36,7 +36,7 @@ function priceLabel(price: string | { cup?: string; mug?: string }): string | nu
 export default function MenuPage() {
   return (
     <>
-      <SEOHead page="menu" />
+      <SEOHead page="menu" breadcrumbs={[{ name: "Food Menu", url: `/menu` }]} />
 
       {/* ══ HERO — dark band with editorial framing ══ */}
       <section className="band-dark-mesh relative overflow-hidden py-20 md:py-28 top-accent">

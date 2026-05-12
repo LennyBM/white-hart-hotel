@@ -77,7 +77,7 @@ export function PopUpBarPage() {
 
   return (
     <>
-      <SEOHead page="popUpBar" />
+      <SEOHead page="popUpBar" breadcrumbs={[{ name: "Pop Up Bar", url: `/pop-up-bar` }]} />
 
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">

@@ -5,7 +5,7 @@ import { CONTACT } from '../../constants/contact';
 export default function PoolPage() {
   return (
     <>
-      <SEOHead page="pool" />
+      <SEOHead page="pool" breadcrumbs={[{ name: "What's On", url: `/whats-on` }, { name: "Pool & Darts", url: `/whats-on/pool` }]} />
 
       {/* ══ HERO ══ */}
       <section className="relative min-h-[56vh] md:min-h-[66vh] flex items-end overflow-hidden bg-[#0e0b08]">

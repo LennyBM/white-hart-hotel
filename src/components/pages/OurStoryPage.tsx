@@ -1,4 +1,5 @@
 import { SEOHead } from '../ui/SEOHead';
+import { SchemaOrg } from '../ui/SchemaOrg';
 import { CTAButton } from '../ui/CTAButton';
 import { FlourishDivider } from '../ui/FlourishDivider';
 import { CONTACT } from '../../constants/contact';
@@ -7,7 +8,22 @@ import { timeline } from '../../data/historyTimeline';
 export function OurStoryPage() {
   return (
     <>
-      <SEOHead page="ourStory" />
+      <SEOHead page="ourStory" breadcrumbs={[{ name: 'Our Story', url: `${CONTACT.siteUrl}/our-story` }]} />
+      <SchemaOrg type="Person" data={{
+        '@id': `${CONTACT.siteUrl}/#person-jon-hutchings`,
+        name: 'Jon Hutchings',
+        jobTitle: 'Owner & Manager',
+        worksFor: { '@type': 'Organization', name: CONTACT.name, url: CONTACT.siteUrl },
+        description: 'Former Royal Navy serviceman and Mayor of Holsworthy. Has run The White Hart Hotel since 2005 with his wife Tam.',
+        url: `${CONTACT.siteUrl}/our-story`,
+      }} />
+      <SchemaOrg type="Person" data={{
+        '@id': `${CONTACT.siteUrl}/#person-tam-hutchings`,
+        name: 'Tam Hutchings',
+        jobTitle: 'Owner',
+        worksFor: { '@type': 'Organization', name: CONTACT.name, url: CONTACT.siteUrl },
+        url: `${CONTACT.siteUrl}/our-story`,
+      }} />
 
       {/* Hero — dark band with flourish + deer watermarks */}
       <section className="band-dark-mesh relative overflow-hidden py-20 md:py-32 top-accent">

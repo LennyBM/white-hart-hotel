@@ -69,9 +69,15 @@
   --color-on-error: #FFFFFF;
   --color-on-error-container: #410002;
 
-  --font-headline: 'Newsreader', 'Georgia', serif;
-  --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
-  --font-label: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --font-headline: 'Newsreader', 'Newsreader-Fallback', 'Georgia', serif;
+  --font-body: 'Inter', 'Inter-Fallback', -apple-system, 'Segoe UI', sans-serif;
+  --font-label: 'Inter', 'Inter-Fallback', -apple-system, 'Segoe UI', sans-serif;
+
+  /* Footer / dark-surface palette */
+  --color-footer-surface: #221E1A;
+  --color-footer-surface-alt: #2C2825;
+  --color-footer-text: #A09889;
+  --color-footer-text-bright: #E5E2E1;
 }
 
 /* ═══════════════════════════════════════════
@@ -704,4 +710,91 @@ body::after {
   .marquee-track { animation: none; }
   .link-slide::after { transition: none; width: 0 !important; }
   html { scroll-behavior: auto !important; }
+}
+
+/* ═══════════════════════════════════════════
+   PRINT STYLESHEET
+   Strips chrome; keeps content legible in B&W
+   ═══════════════════════════════════════════ */
+
+@media print {
+  /* Remove decorative and navigation chrome */
+  header, footer, nav,
+  .cookie-consent-banner,
+  [class*="mobile-bottom"],
+  [class*="scroll-to-top"],
+  [class*="today-strip"],
+  button:not([data-print]),
+  .btn-shimmer,
+  .mobile-scroll {
+    display: none !important;
+  }
+
+  /* Reset backgrounds/shadows for B&W printing */
+  *, *::before, *::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color: #000 !important;
+    border-color: #ccc !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    font-family: Georgia, serif;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Show full URL for external links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #555 !important;
+  }
+
+  /* Suppress in-page anchor and internal route links */
+  a[href^="/"]::after,
+  a[href^="#"]::after {
+    content: none;
+  }
+
+  /* Keep images in flow, remove zoom/overlay effects */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure single-column layout */
+  .container, .max-w-7xl, .max-w-3xl {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Main content full width */
+  main {
+    margin: 0 !important;
+    padding: 1cm 2cm !important;
+  }
+
+  /* Page break control */
+  section {
+    page-break-inside: avoid;
+  }
+
+  /* Print masthead */
+  main::before {
+    content: "The White Hart Hotel · 3 Fore Street, Holsworthy, Devon EX22 6EB · 01409 253475 · whitehartholsworthy.co.uk";
+    display: block;
+    font-size: 9pt;
+    color: #555 !important;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5cm;
+    margin-bottom: 1cm;
+  }
 }

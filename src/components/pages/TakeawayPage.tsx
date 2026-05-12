@@ -21,7 +21,7 @@ const JustEatLogo = ({ className = 'h-6 w-auto' }: { className?: string }) => (
 export default function TakeawayPage() {
   return (
     <>
-      <SEOHead page="takeaway" />
+      <SEOHead page="takeaway" breadcrumbs={[{ name: "Takeaway", url: `/takeaway` }]} />
 
       {/* ══ HERO ══ */}
       <section className="relative overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center">

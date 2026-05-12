@@ -140,11 +140,11 @@ export function CookieConsent() {
       <div
         className={`fixed bottom-0 left-0 right-0 z-50 motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out ${show ? 'translate-y-0' : 'translate-y-full'}`}
       >
-        <div className="bg-[#221E1A] border-t border-outline-variant/20 shadow-2xl">
+        <div className="bg-footer-surface border-t border-outline-variant/20 shadow-2xl">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
               <div className="flex-1">
-                <p className="text-[#E5E2E1] text-sm">
+                <p className="text-footer-text-bright text-sm">
                   We use cookies to improve your experience and measure site performance.{' '}
                   <Link to="/cookies" className="text-primary underline underline-offset-4 hover:text-primary-container">
                     Learn more
@@ -160,7 +160,7 @@ export function CookieConsent() {
                 </button>
                 <button
                   onClick={rejectNonEssential}
-                  className="border border-[#A09889] text-[#E5E2E1] px-6 py-2.5 rounded-md font-label font-bold text-xs uppercase tracking-widest min-h-[44px] hover:bg-[#2C2825] transition-colors"
+                  className="border border-footer-text text-footer-text-bright px-6 py-2.5 rounded-md font-label font-bold text-xs uppercase tracking-widest min-h-[44px] hover:bg-footer-surface-alt transition-colors"
                 >
                   Reject Non-Essential
                 </button>

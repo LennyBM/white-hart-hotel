@@ -57,7 +57,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     >
       {/* Backdrop — full black for readability */}
       <div
-        className="absolute inset-0 bg-[#221E1A]"
+        className="absolute inset-0 bg-footer-surface"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -72,7 +72,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         {/* Close button at top right */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-3 min-w-[44px] min-h-[44px] text-white/60 hover:text-[#e6c487] transition-colors"
+          className="absolute top-5 right-5 p-3 min-w-[44px] min-h-[44px] text-white/60 hover:text-inverse-primary transition-colors"
           aria-label="Close menu"
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -88,7 +88,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 key={link.to}
                 to={link.to}
                 className={`font-headline italic text-3xl transition-colors duration-300 ${
-                  isActive ? 'text-[#e6c487]' : 'text-white hover:text-[#e6c487]'
+                  isActive ? 'text-inverse-primary' : 'text-white hover:text-inverse-primary'
                 }`}
                 onClick={handleLinkClick}
                 aria-current={isActive ? 'page' : undefined}
@@ -114,7 +114,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               key={link.to}
               to={link.to}
               onClick={handleLinkClick}
-              className="text-[#A09889] hover:text-[#e6c487] transition-colors text-xs font-label tracking-wide"
+              className="text-footer-text hover:text-inverse-primary transition-colors text-xs font-label tracking-wide"
             >
               {link.label}
             </Link>
@@ -130,7 +130,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           </a>
           <a
             href={CONTACT.emailHref}
-            className="text-[#A09889] font-label text-sm tracking-wide hover:text-[#e6c487] transition-colors"
+            className="text-footer-text font-label text-sm tracking-wide hover:text-inverse-primary transition-colors"
           >
             {CONTACT.email}
           </a>
