@@ -77,4 +77,31 @@ export const events: WhEvent[] = [
     featured: true,
     past: false,
   },
+  {
+    id: 'darts-tournament-may-2026',
+    title: 'Sunday Funday Darts Tournament',
+    date: 'Sunday 24 May 2026 · From 7pm',
+    description:
+      '£20 entry, maximum 24 players. Prize pot split between the top finishers. Register at the bar or through a league player. Spaces fill fast — get your name down early.',
+    image: '/images/event-pool.webp',
+    imageAlt: 'Darts tournament at The White Hart Holsworthy — Sunday 24 May 2026',
+    cta: '/contact',
+    ctaLabel: 'Register Now',
+    featured: true,
+    past: false,
+  },
+  {
+    id: 'world-cup-2026',
+    title: 'FIFA World Cup 2026',
+    subtitle: '14 Screens in VINYL',
+    date: 'From 11 June 2026',
+    description:
+      'Watch every England game — and every match that matters — across 14 screens in VINYL. Hot dogs, 4-pint pitchers, and table service throughout. The biggest tournament in the world, in Holsworthy\'s biggest screen venue.',
+    image: '/images/event-rugby.webp',
+    imageAlt: 'World Cup 2026 screenings at The White Hart — 14 screens in VINYL',
+    cta: '/contact',
+    ctaLabel: 'Book Your Table',
+    featured: true,
+    past: false,
+  },
 ];
