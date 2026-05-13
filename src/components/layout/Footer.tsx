@@ -146,7 +146,8 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center space-y-1">
           <p className="font-label text-[10px] text-footer-text/40 leading-relaxed">
             {CONTACT.name} &mdash; Registered Office: {CONTACT.address.full}
-            {' '}&mdash; Company No. {CONTACT.companyNumber} &mdash; ICO Reg. {CONTACT.icoNumber}
+            {CONTACT.companyNumber && <> &mdash; Company No. {CONTACT.companyNumber}</>}
+            {CONTACT.icoNumber && <> &mdash; ICO Reg. {CONTACT.icoNumber}</>}
           </p>
         </div>
       </div>

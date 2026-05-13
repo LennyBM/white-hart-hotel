@@ -1,9 +1,7 @@
 export const CONTACT = {
   name: 'The White Hart Hotel',
-  // UPDATE: Add actual Companies House number (required by Companies Act 2006)
-  companyNumber: 'XXXXXXXX',
-  // UPDATE: Add actual ICO registration number (required — site processes personal data via contact form)
-  icoNumber: 'ZXXXXXXXX',
+  companyNumber: '',
+  icoNumber: '',
   address: {
     number: '3',
     street: 'Fore Street',
