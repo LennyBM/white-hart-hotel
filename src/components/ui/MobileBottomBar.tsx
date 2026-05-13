@@ -32,7 +32,7 @@ export function MobileBottomBar() {
 
   return (
     <div className={`fixed bottom-0 left-0 right-0 z-40 md:hidden transition-transform duration-300 ${visible ? 'translate-y-0' : 'translate-y-full'}`}
-      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+      style={{ paddingBottom: 'env(safe-area-inset-bottom)', willChange: 'transform' }}>
       <div className="flex border-t border-white/10" style={{ background: '#1A1713' }}>
         {/* Call */}
         <a

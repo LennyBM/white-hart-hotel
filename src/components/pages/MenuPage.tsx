@@ -88,7 +88,7 @@ export default function MenuPage() {
       </section>
 
       {/* ══ JUMP NAV ══ */}
-      <div className="sticky top-0 z-30 bg-surface/95 backdrop-blur border-b border-outline-variant/20 overflow-x-auto">
+      <div className="sticky top-0 z-30 bg-surface border-b border-outline-variant/20 overflow-x-auto">
         <div className="flex gap-0 px-4 min-w-max">
           {jumpNav.map((item) => (
             <a
