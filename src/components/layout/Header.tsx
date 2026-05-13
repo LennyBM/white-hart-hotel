@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { NAV_LINKS, CONTACT } from '../../constants/contact';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
 import { MobileMenu } from './MobileMenu';
+import { trackPhoneClick } from '../ui/Analytics';
 
 const HERO_PAGES = ['/', '/dining', '/rooms', '/whats-on', '/pop-up-bar'];
 
@@ -64,6 +65,7 @@ export function Header() {
               {/* Call Us — visible from lg (1024px) with phone number */}
               <a
                 href={CONTACT.phoneHref}
+                onClick={() => trackPhoneClick('header')}
                 className="hidden lg:flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors font-label uppercase tracking-widest text-xs"
               >
                 <span>Call Us</span>

@@ -25,13 +25,15 @@ export function PrivacyPage() {
         {/* Body */}
         <section className="bg-blush paper-texture relative overflow-hidden py-20">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-on-surface-variant text-sm mb-12">Last updated: April 2026</p>
+            <p className="text-on-surface-variant text-sm mb-12">Last updated: May 2026</p>
 
           <div className="space-y-10 text-on-surface-variant leading-relaxed">
             {/* Intro */}
             <p>
               The White Hart Hotel ("we", "us", "our") is committed to protecting your personal data. This privacy
-              policy explains how we collect, use, store and protect information when you use our website and services.
+              policy explains how we collect, use, store and protect information when you use our website and services,
+              in accordance with the UK General Data Protection Regulation (UK GDPR), the Data Protection Act 2018,
+              and the Data (Use and Access) Act 2025 (DUAA).
             </p>
 
             {/* What Data We Collect */}
@@ -46,6 +48,18 @@ export function PrivacyPage() {
               </ul>
             </section>
 
+            {/* Lawful Basis */}
+            <section>
+              <h2 className="font-headline italic text-2xl text-on-surface mb-4">Lawful Basis for Processing</h2>
+              <p className="mb-3">Under UK GDPR Article 6, we rely on the following lawful bases:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong className="text-on-surface">Legitimate interest</strong> — responding to enquiries, operating our website, and basic analytics to understand visitor behaviour</li>
+                <li><strong className="text-on-surface">Consent</strong> — where you have accepted marketing cookies (GA4, Meta Pixel)</li>
+                <li><strong className="text-on-surface">Contract</strong> — processing booking information necessary to fulfil a reservation</li>
+                <li><strong className="text-on-surface">Legal obligation</strong> — where we are required by law to retain records</li>
+              </ul>
+            </section>
+
             {/* How We Use It */}
             <section>
               <h2 className="font-headline italic text-2xl text-on-surface mb-4">How We Use It</h2>
@@ -53,7 +67,8 @@ export function PrivacyPage() {
               <ul className="list-disc pl-6 space-y-2">
                 <li>Respond to enquiries submitted through our contact form</li>
                 <li>Process and manage room and table bookings</li>
-                <li>Improve our website and understand how visitors use it (via Google Analytics GA4)</li>
+                <li>Measure website performance using privacy-first analytics (Plausible Analytics — no cookies, no personal data)</li>
+                <li>Improve our website and understand how visitors use it (via Google Analytics GA4, only with your consent)</li>
                 <li>Deliver relevant advertising on social media platforms (via Meta Pixel, only with your consent)</li>
                 <li>Comply with legal obligations</li>
               </ul>
@@ -82,9 +97,11 @@ export function PrivacyPage() {
               <h2 className="font-headline italic text-2xl text-on-surface mb-4">Third Parties</h2>
               <p className="mb-3">We may share your data with the following third-party services:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong className="text-on-surface">Netlify</strong> — hosts our website and processes contact form submissions</li>
-                <li><strong className="text-on-surface">Google Analytics (GA4)</strong> — website analytics (with consent)</li>
-                <li><strong className="text-on-surface">Meta (Facebook/Instagram)</strong> — advertising pixel (with consent)</li>
+                <li><strong className="text-on-surface">Netlify</strong> — hosts our website and processes contact form submissions (USA, covered by EU-US Data Privacy Framework adequacy decision)</li>
+                <li><strong className="text-on-surface">Plausible Analytics</strong> — privacy-first website analytics; no cookies, no personal data collected; data processed in the EU</li>
+                <li><strong className="text-on-surface">Google Analytics (GA4)</strong> — website analytics (with consent; data may be processed in the USA under Google's Standard Contractual Clauses)</li>
+                <li><strong className="text-on-surface">Meta (Facebook/Instagram)</strong> — advertising pixel (with consent; data may be processed in the USA under Meta's Standard Contractual Clauses)</li>
+                <li><strong className="text-on-surface">Booking Directly</strong> — online booking widget; their own privacy policy applies to reservation data</li>
                 <li><strong className="text-on-surface">Booking.com</strong> — if you book through their platform, their own privacy policy applies</li>
               </ul>
               <p className="mt-3">We do not sell your personal data to any third party.</p>

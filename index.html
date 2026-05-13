@@ -2,16 +2,22 @@
 <html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!-- SVG favicon: scales to any size, dark-mode aware -->
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <!-- ICO fallback for browsers without SVG icon support (16/32/48px) -->
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- iOS home-screen / iPadOS / Apple Mail -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Web App Manifest: Android + Chrome desktop install -->
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#FDFBF7" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#221E1A" media="(prefers-color-scheme: dark)" />
     <meta name="color-scheme" content="light dark" />
+    <!-- Sitemap crawler hint -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <!-- RSS feed for blog/news section -->
+    <link rel="alternate" type="application/rss+xml" title="News from The Hart" href="/feed.xml" />
     <!-- Preload critical fonts before CSS parses -->
     <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader-400i.woff2" crossorigin />
@@ -28,7 +34,6 @@
     <link rel="dns-prefetch" href="https://connect.facebook.net" />
     <link rel="dns-prefetch" href="https://www.facebook.com" />
     <link rel="dns-prefetch" href="https://booking-directly.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>The White Hart Hotel | Historic Pub, Restaurant &amp; Hotel in Holsworthy, Devon</title>
     <meta name="description" content="The White Hart Hotel, Holsworthy — a historic family-run pub, restaurant and hotel dating back to 1591. Dine, stay and celebrate in the heart of Devon." />
     <meta name="keywords" content="pub Holsworthy, hotel Holsworthy Devon, restaurant Holsworthy, White Hart Hotel, historic pub Devon, EX22, accommodation Holsworthy" />

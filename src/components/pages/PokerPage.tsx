@@ -5,7 +5,7 @@ import { CONTACT } from '../../constants/contact';
 export default function PokerPage() {
   return (
     <>
-      <SEOHead page="poker" />
+      <SEOHead page="poker" breadcrumbs={[{ name: "What's On", url: `/whats-on` }, { name: "Poker Nights", url: `/whats-on/poker` }]} />
 
       {/* ══ HERO — no poster crop, rich dark mesh instead ══ */}
       <section className="relative min-h-[54vh] md:min-h-[62vh] flex items-end overflow-hidden bg-[#0e0b08]">

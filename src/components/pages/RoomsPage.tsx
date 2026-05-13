@@ -104,7 +104,7 @@ export default function RoomsPage() {
 
   return (
     <>
-      <SEOHead page="rooms" />
+      <SEOHead page="rooms" breadcrumbs={[{ name: "Rooms", url: `/rooms` }]} />
       <SchemaOrg type="Hotel" />
 
       {/* ══ HERO — exterior facade background, centred editorial content ══ */}

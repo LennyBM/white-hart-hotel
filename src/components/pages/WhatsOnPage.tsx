@@ -67,7 +67,7 @@ export function WhatsOnPage() {
 
   return (
     <>
-      <SEOHead page="whatsOn" />
+      <SEOHead page="whatsOn" breadcrumbs={[{ name: "What's On", url: `/whats-on` }]} />
       {featuredEvents.map((event) => (
         <SchemaOrg key={event.id} type="Event" data={{ name: event.title, description: event.description, image: `${CONTACT.siteUrl}${event.image}` }} />
       ))}
@@ -84,7 +84,7 @@ export function WhatsOnPage() {
               Calendar &amp; Gatherings
             </h1>
             <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed font-light">
-              Poker, pool, steak nights, karaoke and live music — there&rsquo;s always a reason to gather at The White Hart.
+              Poker, pool, steak nights, karaoke, World Cup screenings — there&rsquo;s always a reason to gather at The White Hart.
             </p>
             <p className="text-white/60 text-sm mt-5 font-label">
               Bookings:{' '}

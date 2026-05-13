@@ -264,7 +264,7 @@ export default function VinylMenuPage() {
 
   return (
     <>
-      <SEOHead page="vinyl-menu" />
+      <SEOHead page="vinyl-menu" breadcrumbs={[{ name: "VINYL Menu", url: `/vinyl-menu` }]} />
 
       {/* Hero — dark band with flourish + deer watermark */}
       <section className="band-dark-mesh relative overflow-hidden py-20 md:py-32 top-accent">

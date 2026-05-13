@@ -1,5 +1,7 @@
 export const CONTACT = {
   name: 'The White Hart Hotel',
+  companyNumber: '',
+  icoNumber: '',
   address: {
     number: '3',
     street: 'Fore Street',
@@ -52,5 +54,6 @@ export const FOOTER_EXPLORE_LINKS = [
   { label: 'Pop Up Bar', to: '/pop-up-bar' },
   { label: 'Our Story', to: '/our-story' },
   { label: 'News', to: '/news' },
+  { label: 'FAQs', to: '/faqs' },
   { label: 'Contact', to: '/contact' },
 ] as const;

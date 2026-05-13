@@ -54,6 +54,16 @@ export function AccreditationBar() {
             </svg>
             <span className="font-label text-[11px] uppercase tracking-[0.15em] font-medium">Free House</span>
           </span>
+
+          <span className="w-px h-3.5 bg-outline-variant/40 shrink-0" />
+
+          {/* Top 50 Pubs in Devon 2025 */}
+          <span className="flex items-center gap-1.5 shrink-0">
+            <svg className="w-4 h-4 text-[#C68B2C]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" />
+            </svg>
+            <span className="font-label text-[11px] uppercase tracking-[0.15em] font-medium">Top 50 Pubs · Devon 2025</span>
+          </span>
         </div>
       </div>
     </section>

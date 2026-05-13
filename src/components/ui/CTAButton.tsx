@@ -27,7 +27,7 @@ export function CTAButton({
 
   const variants = {
     primary: 'bg-primary text-on-primary btn-shimmer',
-    outline: 'bg-[#221E1A]/80 backdrop-blur-sm border border-white/20 text-white hover:bg-[#221E1A] hover:border-white/40',
+    outline: 'bg-footer-surface/80 backdrop-blur-sm border border-white/20 text-white hover:bg-footer-surface hover:border-white/40',
     ghost: 'text-primary hover:underline underline-offset-8',
   };
 

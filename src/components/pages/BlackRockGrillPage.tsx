@@ -39,7 +39,7 @@ const sides = [
 export default function BlackRockGrillPage() {
   return (
     <>
-      <SEOHead page="black-rock-grill" />
+      <SEOHead page="black-rock-grill" breadcrumbs={[{ name: "Black Rock Grill", url: `/black-rock-grill` }]} />
 
       {/* ══ HERO ══ */}
       <section className="relative overflow-hidden dark-section">

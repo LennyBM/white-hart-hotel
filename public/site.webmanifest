@@ -1,15 +1,46 @@
 {
   "name": "The White Hart Hotel",
   "short_name": "White Hart",
-  "start_url": "/",
+  "description": "Historic pub, restaurant and hotel in Holsworthy, Devon since 1591. Six boutique rooms, Sunday Carvery, VINYL restaurant and live events.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#e6c487",
+  "orientation": "portrait-primary",
   "background_color": "#131313",
+  "theme_color": "#e6c487",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "categories": ["food", "travel", "entertainment"],
   "icons": [
-    { "src": "/favicon-16x16.png", "sizes": "16x16", "type": "image/png" },
-    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
-    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
-    { "src": "/apple-touch-icon.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/apple-touch-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }

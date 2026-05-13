@@ -86,6 +86,12 @@ export const PAGE_META: Record<string, PageMeta> = {
     canonical: `${BASE_URL}/cookies`,
     ogImage: OG_IMAGE,
   },
+  accessibility: {
+    title: 'Accessibility Statement | The White Hart Hotel, Holsworthy',
+    description: 'Our commitment to web accessibility at The White Hart Hotel. WCAG 2.2 AA standard and how to request accessible formats.',
+    canonical: `${BASE_URL}/accessibility`,
+    ogImage: OG_IMAGE,
+  },
   notFound: {
     title: '404 — Page Not Found | The White Hart Hotel', // 46 (OK for error page)
     description: 'This page could not be found. Return to The White Hart Hotel homepage to explore dining, rooms, events and more.', // 112 (OK for error page)
@@ -154,5 +160,13 @@ export const PAGE_META: Record<string, PageMeta> = {
     canonical: `${BASE_URL}/whats-on/karaoke`,
     ogImage: `${BASE_URL}/images/event-karaoke.jpg`,
     keywords: 'karaoke Holsworthy, karaoke night Devon, karaoke pub EX22, karaoke Saturday Holsworthy',
+  },
+  faqs: {
+    title: 'FAQs | The White Hart Hotel, Holsworthy — Rooms, Dining & Visiting',
+    description:
+      'Frequently asked questions about The White Hart Hotel in Holsworthy, Devon. Parking, check-in times, dining hours, booking, dogs, events and more.',
+    canonical: `${BASE_URL}/faqs`,
+    ogImage: OG_IMAGE,
+    keywords: 'White Hart Hotel FAQ, Holsworthy hotel questions, parking Holsworthy, check in White Hart, dining Holsworthy Devon',
   },
 };

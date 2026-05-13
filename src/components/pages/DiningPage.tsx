@@ -16,7 +16,7 @@ export default function DiningPage() {
 
   return (
     <>
-      <SEOHead page="dining" />
+      <SEOHead page="dining" breadcrumbs={[{ name: "Dining", url: `/dining` }]} />
       <SchemaOrg type="Restaurant" />
 
       {/* ════════════════════════════════════

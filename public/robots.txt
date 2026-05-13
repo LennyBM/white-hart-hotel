@@ -1,4 +1,51 @@
+# robots.txt — whitehartholsworthy.co.uk
+
 User-agent: *
+Allow: /
+Disallow: /api/
+
+# AI crawler policy — allow all retrieval bots for maximum AI-search visibility
+# Hospitality / tourism: being cited in ChatGPT, Perplexity, Gemini, Copilot drives bookings
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: claude-web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://whitehartholsworthy.co.uk/sitemap.xml
+
+# AI-readable site description (llmstxt.org spec)
+# https://whitehartholsworthy.co.uk/llms.txt
