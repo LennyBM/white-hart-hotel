@@ -44,4 +44,12 @@ export const faqs: FAQItem[] = [
     question: 'What payment methods do you accept?',
     answer: 'We accept card payments only. Cash is not accepted.',
   },
+  {
+    question: 'Where is The White Hart Hotel?',
+    answer: 'The White Hart Hotel is on Fore Street in the centre of Holsworthy, Devon (EX22 6EB). We are 20 minutes from Bude, 45 minutes from Exeter, 50 minutes from Plymouth, and right on the Devon–Cornwall border. Free Pay & Display parking is a 2-minute walk away.',
+  },
+  {
+    question: 'What is there to do near The White Hart Hotel?',
+    answer: 'Roadford Lake is 5 minutes away for watersports and walking. Bude beaches are 20 minutes for surfing and coastal walks. Dartmoor National Park is 25 minutes for hiking and wild swimming. RHS Rosemoor is 15 minutes away, and the Tarka Trail starts 10 minutes from the hotel.',
+  },
 ];

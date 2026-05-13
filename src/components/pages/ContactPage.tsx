@@ -934,6 +934,46 @@ export function ContactPage() {
         </div>
       </section>
 
+      {/* Getting Here & Nearby — GEO content block */}
+      <section className="py-16 md:py-20 px-6 md:px-8 bg-blush paper-texture">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-headline italic text-3xl md:text-4xl text-on-surface mb-10 text-center reveal">
+            Getting to The White Hart &amp; What's Nearby
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12">
+            <div className="reveal">
+              <h3 className="font-label uppercase tracking-widest text-xs text-primary font-bold mb-4">Distance from Major Cities</h3>
+              <ul className="space-y-2.5 text-sm text-on-surface-variant leading-relaxed">
+                <li><strong className="text-on-surface">Exeter:</strong> 45 minutes (A377/A3072)</li>
+                <li><strong className="text-on-surface">Plymouth:</strong> 50 minutes (A386/A388)</li>
+                <li><strong className="text-on-surface">Barnstaple:</strong> 30 minutes (A388)</li>
+                <li><strong className="text-on-surface">Bude:</strong> 20 minutes (A3072)</li>
+                <li><strong className="text-on-surface">Bristol:</strong> 2 hours (M5/A361)</li>
+                <li><strong className="text-on-surface">London:</strong> 4 hours (M4/M5/A30)</li>
+              </ul>
+            </div>
+
+            <div className="reveal">
+              <h3 className="font-label uppercase tracking-widest text-xs text-primary font-bold mb-4">Nearby Attractions</h3>
+              <ul className="space-y-2.5 text-sm text-on-surface-variant leading-relaxed">
+                <li><strong className="text-on-surface">Roadford Lake:</strong> 5 minutes — watersports, walking trails and nature reserve</li>
+                <li><strong className="text-on-surface">Bude beaches:</strong> 20 minutes — surfing, coastal walks and family beaches</li>
+                <li><strong className="text-on-surface">Dartmoor National Park:</strong> 25 minutes — hiking, cycling, wild swimming and Tor walking</li>
+                <li><strong className="text-on-surface">RHS Rosemoor:</strong> 15 minutes — gardens and seasonal events year-round</li>
+                <li><strong className="text-on-surface">The Tarka Trail:</strong> 10 minutes — 30-mile cycling and walking trail</li>
+                <li><strong className="text-on-surface">Holsworthy Market:</strong> 1 minute — traditional livestock market every Wednesday</li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-on-surface-variant reveal">
+            The White Hart Hotel is on Fore Street in the centre of Holsworthy, Devon (EX22 6EB) — on the
+            border of Devon and North Cornwall, perfectly placed for exploring both coastlines and the moors.
+          </p>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 px-8 bg-surface-container-low">
         <div className="max-w-3xl mx-auto">

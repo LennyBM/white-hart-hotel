@@ -178,7 +178,7 @@ export function WhatsOnPage() {
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.1) 100%)' }} />
                 {featuredEvents[0].partnerLogo && (
                   <div className="absolute top-5 right-5 z-20 bg-black/50 backdrop-blur-sm rounded-xl p-2.5">
-                    <img src={featuredEvents[0].partnerLogo} alt={featuredEvents[0].partnerName} className="h-9 w-auto object-contain" />
+                    <img src={featuredEvents[0].partnerLogo} alt={featuredEvents[0].partnerName} className="h-9 w-auto object-contain" width={120} height={36} />
                   </div>
                 )}
                 <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10 z-10">
@@ -225,7 +225,7 @@ export function WhatsOnPage() {
                     <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0.05) 100%)' }} />
                     {event.partnerLogo && (
                       <div className="absolute top-4 right-4 z-20 bg-black/50 backdrop-blur-sm rounded-lg p-2">
-                        <img src={event.partnerLogo} alt={event.partnerName} className="h-7 w-auto object-contain" />
+                        <img src={event.partnerLogo} alt={event.partnerName} className="h-7 w-auto object-contain" width={100} height={28} />
                       </div>
                     )}
                     <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
