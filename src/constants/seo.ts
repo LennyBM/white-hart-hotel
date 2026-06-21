@@ -140,7 +140,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   poker: {
     title: 'LPPL Poker | Every Tuesday at The White Hart', // 46
     description:
-      "Join the League Poker Players League every Tuesday night at The White Hart Hotel. £10 buy-in, Texas Hold'em format. New players always welcome.", // 144
+      "Join the Live Pub Poker League every Tuesday night at The White Hart Hotel. Free to play or a small buy-in, Texas Hold'em format. New players always welcome.", // 152
     canonical: `${BASE_URL}/whats-on/poker`,
     ogImage: `${BASE_URL}/images/event-poker.jpg`,
     keywords: 'poker night Holsworthy, LPPL poker Devon, Texas Hold\'em Devon, pub poker night EX22, poker league Devon',

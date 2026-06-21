@@ -117,8 +117,38 @@ export default function PoolPage() {
         </div>
       </section>
 
+      {/* ══ RECENT RESULTS ══ */}
+      <section className="bg-surface py-12 md:py-16 border-t border-outline-variant/15">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-10">
+            <p className="font-label uppercase tracking-[0.35em] text-primary text-[10px] font-medium mb-2">On the Baize</p>
+            <h2 className="font-headline italic text-on-surface" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+              Recent Team Results
+            </h2>
+            <p className="text-on-surface-variant text-sm md:text-base font-light max-w-xl mx-auto mt-3">
+              Our pool and darts teams have had a season to remember. Want to play? Come down on a league night.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {[
+              { title: 'Lions Speed Pool', body: "We won the triple — highest team score, highest individual score (Ian), and most raised for charity." },
+              { title: 'Launceston Winter Pool League', body: 'Division 1 runners-up. Well played to Jordan, Aaron, Steve, Sam, Ryan and the team.' },
+              { title: 'Winter Darts League', body: 'A great finals night — so many trophies we needed a bigger cupboard. Well done all.' },
+            ].map(({ title, body }) => (
+              <div key={title} className="bg-surface-container/50 rounded-xl p-6 border border-outline-variant/15 text-center">
+                <svg className="w-7 h-7 text-[#C68B2C] mx-auto mb-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" />
+                </svg>
+                <p className="font-headline italic text-on-surface text-lg mb-1.5">{title}</p>
+                <p className="text-on-surface-variant text-sm leading-relaxed font-light">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══ CTA ══ */}
-      <section className="bg-surface py-12 md:py-16">
+      <section className="bg-surface-container-low py-12 md:py-16">
         <div className="container mx-auto px-6 text-center">
           <p className="font-label uppercase tracking-[0.35em] text-primary text-[10px] font-medium mb-3">Come Down</p>
           <h2 className="font-headline italic text-on-surface mb-4" style={{ fontSize: 'clamp(1.6rem, 4vw, 2.4rem)' }}>

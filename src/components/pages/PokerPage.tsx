@@ -33,10 +33,10 @@ export default function PokerPage() {
               <span className="font-label text-[11px] uppercase tracking-widest text-[#e6c487] font-semibold">Every Tuesday · 8pm</span>
             </div>
             <h1 className="font-headline italic text-white leading-[0.95] mb-5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" style={{ fontSize: 'clamp(2.4rem, 8vw, 5.5rem)' }}>
-              LPPL League Poker
+              Live Pub Poker League
             </h1>
             <p className="text-white/85 text-base md:text-lg leading-relaxed font-light max-w-xl">
-              Holsworthy's home of Texas Hold'em. Join the League Poker Players League every Tuesday — £10 buy-in, proper tournament format, and a seat at the table for anyone who fancies their luck.
+              Holsworthy's home of Texas Hold'em. Join the Live Pub Poker League every Tuesday — free to play, or a small buy-in for the cash prize. Proper tournament format, and a seat at the table for anyone who fancies their luck.
             </p>
           </div>
         </div>
@@ -48,8 +48,8 @@ export default function PokerPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
               { label: 'When', value: 'Every Tuesday' },
-              { label: 'Start Time', value: '8:00 PM' },
-              { label: 'Buy-In', value: '£10' },
+              { label: 'Registration', value: 'From 8:00 PM' },
+              { label: 'Buy-In', value: 'Free / small' },
               { label: 'Format', value: "Texas Hold'em" },
             ].map(({ label, value }) => (
               <div key={label} className="text-center">
@@ -74,7 +74,7 @@ export default function PokerPage() {
                 </h2>
               </div>
               <p className="text-on-surface-variant text-base leading-relaxed font-light">
-                The League Poker Players League (LPPL) is one of the UK's largest amateur poker networks. Every Tuesday night the White Hart becomes a tournament venue — proper chips, proper cards, proper prize pools.
+                The Live Pub Poker League (LPPL) is one of the UK's largest pub poker networks. Every Tuesday night the White Hart becomes a tournament venue — proper chips, proper cards, proper prize pools.
               </p>
               <p className="text-on-surface-variant text-base leading-relaxed font-light">
                 Earn league points with every tournament you play, climb the national leaderboard, and qualify for regional and national finals. New players are always welcome — the format is friendly, the stakes are low, and the community is built around good company and sharp card play.
@@ -132,7 +132,7 @@ export default function PokerPage() {
             See you at the tables
           </h2>
           <p className="text-on-surface-variant text-sm md:text-base font-light max-w-lg mx-auto mb-6">
-            The White Hart Hotel, 3 Fore Street, Holsworthy EX22 6EB. Tournament starts 8pm sharp — arrive from 7:30pm to register.
+            The White Hart Hotel, 3 Fore Street, Holsworthy EX22 6EB. Registration from 8pm, cards in the air at 8:30pm — new players always welcome.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <CTAButton href={CONTACT.phoneHref} variant="primary">{CONTACT.phone}</CTAButton>

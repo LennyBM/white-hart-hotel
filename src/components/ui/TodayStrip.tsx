@@ -9,10 +9,10 @@ interface DayEvent {
 const DAILY_EVENTS: Record<number, DayEvent> = {
   0: { label: 'Sunday Carvery', detail: '12–3:30pm · Adult £10.95 · Child £5.95', to: '/dining#carvery' },
   1: { label: 'Food served all day', detail: 'Lunch 11am–2:30pm · Dinner from 6pm', to: '/menu' },
-  2: { label: 'LPPL Poker Night', detail: '8pm · £10 buy-in · Texas Hold\'em', to: '/whats-on' },
+  2: { label: 'Live Pub Poker League', detail: 'Reg 8pm · Free or small buy-in · Texas Hold\'em', to: '/whats-on' },
   3: { label: 'Black Rock Steak Night', detail: 'Cook your steak on volcanic rock at 300°C', to: '/black-rock-grill' },
   4: { label: 'Food served all day', detail: 'Lunch 11am–2:30pm · Dinner from 6pm', to: '/menu' },
-  5: { label: 'VINYL opens tonight', detail: 'From 6pm · Steaks, pizza, ribs & DJ sets', to: '/vinyl-menu' },
+  5: { label: 'Friday Draws + VINYL', detail: "5@5 draw 5:30pm · Find the Landlord 6pm · VINYL from 6pm", to: '/whats-on' },
   6: { label: 'VINYL + Karaoke tonight', detail: 'VINYL from 6pm · Karaoke 9pm · Free shot per singer', to: '/whats-on' },
 };
 

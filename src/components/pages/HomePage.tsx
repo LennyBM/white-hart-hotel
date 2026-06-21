@@ -38,7 +38,7 @@ function useHeroStatus() {
     if (isSundayCarvery) parts.push('Carvery until 3:30pm');
     else if (isVinylNight) parts.push('VINYL open from 6pm');
     else if (isSteak) parts.push('Steak Night tonight');
-    else if (isPoker) parts.push('Poker 8pm · £10 entry');
+    else if (isPoker) parts.push('Poker · Reg 8pm · Free or small buy-in');
     else if (time < 14.5 && isOpen) parts.push('Food until 2:30pm');
     else if (time >= 18 && isOpen) parts.push('Dinner until 8:30pm');
     parts.push('Free parking nearby');

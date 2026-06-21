@@ -57,7 +57,7 @@ function calendarLink(title: string, detail: string): string {
 }
 
 const RECURRING_CALENDAR_EVENTS = [
-  { id: 'lppl-poker', day: 'Tuesday', calTitle: 'LPPL Poker Night @ The White Hart', calDetail: "£10 buy-in · 8pm start · Texas Hold'em" },
+  { id: 'lppl-poker', day: 'Tuesday', calTitle: 'Live Pub Poker League @ The White Hart', calDetail: "Free or small buy-in · Registration 8pm · Texas Hold'em" },
   { id: 'steak-night', day: 'Wednesday', calTitle: 'Black Rock Steak Night @ The White Hart', calDetail: 'Volcanic rock grill · Book a table: 01409 253475' },
   { id: 'karaoke-party', day: 'Saturday', calTitle: 'Karaoke Night @ The White Hart', calDetail: 'First Saturday of the month · 9pm · Free shot for every singer!' },
 ];
@@ -105,7 +105,7 @@ export function WhatsOnPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 md:gap-5 max-w-6xl mx-auto">
             {([
-              { day: 'Tuesday', highlight: 'LPPL Poker Night', detail: "8pm · £10 buy-in · Texas Hold'em", icon: icons.spade, to: '/whats-on/poker', tint: 'rgba(30, 60, 40, 0.08)' },
+              { day: 'Tuesday', highlight: 'Live Pub Poker', detail: "Reg 8pm · Free or small buy-in", icon: icons.spade, to: '/whats-on/poker', tint: 'rgba(30, 60, 40, 0.08)' },
               { day: 'Wednesday', highlight: 'Black Rock Steak Night', detail: 'Cook your steak on volcanic stone', icon: icons.flame, to: '/black-rock-grill', tint: 'rgba(186, 80, 40, 0.08)' },
               { day: 'Any Day', highlight: 'Pool Tables', detail: 'Free to play · All welcome', icon: icons.pool, to: '/whats-on/pool', tint: 'rgba(60, 100, 158, 0.08)' },
               { day: 'Friday', highlight: 'VINYL Restaurant', detail: 'Fine dining from 6pm · Book ahead', icon: icons.music, to: '/dining#vinyl', tint: 'rgba(158, 124, 60, 0.08)' },
